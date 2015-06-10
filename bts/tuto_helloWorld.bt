@@ -1,0 +1,83 @@
+[
+	{
+		"version": "1.0.0"
+	},
+	{
+		"uuid": "dbe6645b-962b-484f-98b6-b0774bf25e82",
+		"name": "tuto_helloWorld",
+		"description": "",
+		"children": [
+			{
+				"id": "93e0213f-ea75-4e4f-96b2-623c3eaab43d",
+				"activated": true,
+				"type": "sequence",
+				"metadata": {
+					"label": "",
+					"itemTemplate": "BTSequenceNode.qml"
+				},
+				"properties": {},
+				"children": [
+					{
+						"id": "e2be95b0-7caa-44b6-96ad-6747ef83482e",
+						"activated": true,
+						"type": "set",
+						"metadata": {
+							"label": "",
+							"itemTemplate": "BTSetNode.qml"
+						},
+						"properties": {
+							"destination": "test",
+							"op": {
+								"value": "hello  world",
+								"type": "string"
+							}
+						},
+						"children": []
+					},
+					{
+						"id": "6a752367-dadf-4231-ac73-f6ac048b0de9",
+						"activated": true,
+						"type": "action",
+						"metadata": {
+							"label": "",
+							"itemTemplate": "BTActionNode.qml"
+						},
+						"properties": {
+							"name": "Say",
+							"inputParams": [
+								{
+									"key": "message",
+									"value": "\"Hello World\" from Craft AI",
+									"type": "string"
+								}
+							],
+							"outputParams": []
+						},
+						"children": []
+					},
+					{
+						"id": "fecb96d0-19a3-4dc2-8c30-7af6028df5c1",
+						"activated": true,
+						"type": "action",
+						"metadata": {
+							"label": "",
+							"itemTemplate": "BTActionNode.qml"
+						},
+						"properties": {
+							"name": "Say",
+							"inputParams": [
+								{
+									"key": "message",
+									"value": "test",
+									"type": "entityKnowledge"
+								}
+							],
+							"outputParams": []
+						},
+						"children": []
+					}
+				]
+			}
+		]
+	}
+]

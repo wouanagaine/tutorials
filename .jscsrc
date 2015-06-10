@@ -1,0 +1,8 @@
+{
+    "preset": "google",
+    "maximumLineLength": null,
+    "requireKeywordsOnNewLine": ["else"],
+    "disallowKeywordsOnNewLine": [""],
+    "requireSemicolons": true,
+    "validateQuoteMarks": "'"
+}
