@@ -67,53 +67,53 @@
     var idUpdate;
     var ws;
 
-    var matchedCapitals = new Array;
-    var countries = new Array;
+    var matchedCapitals = [];
+    var countries = [];
 
     $(document).ready(function() {
       initialize();
-      $("#stop").prop('disabled', true);
-      $("#next").prop('disabled', true);
+      $('#stop').prop('disabled', true);
+      $('#next').prop('disabled', true);
       resizeColumns(window.innerHeight);
       $('#identification').on('shown.bs.modal', function() {
         function enableSubmit() {
           if (($('#owner').val().length > 0) && ($('#project').val().length  > 0) &&
               ($('#branch').val().length > 0) && ($('#appid').val().length > 0) &&
               ($('#appsecret').val().length > 0)) {
-            $("#formsubmit").prop("disabled", false);
+            $('#formsubmit').prop('disabled', false);
           }
           else {
-            $("#formsubmit").prop("disabled", true);
+            $('#formsubmit').prop('disabled', true);
           }
         }
         setTimeout(function() {
-          $("#formsubmit").focus();
+          $('#formsubmit').focus();
         }, 0);
         var url = window.location.search.substring(1);
-        var vars = url.split("&");
+        var vars = url.split('&');
         $('input[type=text]').reverse().each(function() {
           for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split("=");
+            var pair = vars[i].split('=');
             if (pair[0] == this.id) {
-              $(this).prop('value', pair[1].replace("/",""));
+              $(this).prop('value', pair[1].replace('/', ''));
             }
           }
-          if ($(this).val().length == 0) {
+          if ($(this).val().length === 0) {
             $(this).focus();
           }
         });
-        this.addEventListener("input", function() {
+        this.addEventListener('input', function() {
           enableSubmit();
         });
         enableSubmit();
-      })
+      });
     });
 
-    window.addEventListener("beforeunload", function(event) {
+    window.addEventListener('beforeunload', function(event) {
       exit();
     });
 
-    window.addEventListener("resize", function() {
+    window.addEventListener('resize', function() {
       resizeColumns(window.innerHeight);
     });
 
@@ -124,12 +124,12 @@
 
     function initialize() {
       geocoder = new google.maps.Geocoder();
-      var latlng = new google.maps.LatLng(20,0);
+      var latlng = new google.maps.LatLng(20, 0);
       var mapOptions = {
         zoom: 2,
         center: latlng,
         disableDefaultUI: true
-      }
+      };
       map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     }
 
@@ -145,22 +145,22 @@
       TUTO_PROJECT = $('#project').val();
       TUTO_BRANCH = $('#branch').val();
       RUNTIME_URL = $('#runtimeurl').val() || RUNTIME_URL;
-      history.pushState(undefined, undefined, window.location.origin + window.location.pathname + "?owner=" + TUTO_OWNER + "&project=" + TUTO_PROJECT + "&branch=" + TUTO_BRANCH + "&appid=" + TUTO_APP_ID + "&appsecret=" + TUTO_APP_SECRET + "&runtimeurl=" + RUNTIME_URL);
-      loading.innerHTML = "connecting...";
-      $.getJSON( "countries.json", function( data ) {
+      history.pushState(undefined, undefined, window.location.origin + window.location.pathname + '?owner=' + TUTO_OWNER + '&project=' + TUTO_PROJECT + '&branch=' + TUTO_BRANCH + '&appid=' + TUTO_APP_ID + '&appsecret=' + TUTO_APP_SECRET + '&runtimeurl=' + RUNTIME_URL);
+      loading.innerHTML = 'connecting...';
+      $.getJSON('countries.json', function(data) {
         countries = data;
       });
-      $("#run").prop('disabled', true);
-      $("#submitsub").prop('disabled', true);
-      createSimulation( TUTO_OWNER, TUTO_PROJECT, TUTO_BRANCH, function(instanceId) {
-        console.log( "Simulation", instanceId, "created" );
+      $('#run').prop('disabled', true);
+      $('#submitsub').prop('disabled', true);
+      createSimulation(TUTO_OWNER, TUTO_PROJECT, TUTO_BRANCH, function(instanceId) {
+        console.log('Simulation', instanceId, 'created');
         doWS();
-        registerActions( function() {
-          createEntity( "craft:tuto_reddit_manager.bt", {"subreddits": "CityPorn"}, function(responseText) {
-            createEntity( "craft:tuto_city_manager.bt", {}, function(responseText) {
-              $("#stop").prop('disabled', false);
-              $("#next").prop('disabled', false);
-              $("#submitsub").prop('disabled', false);
+        registerActions(function() {
+          createEntity('bts/tuto_reddit_manager.bt', {'subreddits': 'CityPorn'}, function(responseText) {
+            createEntity('bts/tuto_city_manager.bt', {}, function(responseText) {
+              $('#stop').prop('disabled', false);
+              $('#next').prop('disabled', false);
+              $('#submitsub').prop('disabled', false);
               doUpdate();
             });
           });
@@ -169,24 +169,24 @@
     }
 
     function exit() {
-      $("#run").prop('disabled', false);
-      $("#stop").prop('disabled', true);
-      $("#next").prop('disabled', true);
+      $('#run').prop('disabled', false);
+      $('#stop').prop('disabled', true);
+      $('#next').prop('disabled', true);
       loading.innerHTML = 'no simulation';
-      clearInterval( idUpdate );
+      clearInterval(idUpdate);
       destroySimulation();
       ws.close();
     }
 
     function clean() {
       initialize();
-      messages.innerHTML = "";
-      capitalsID.innerHTML = "";
+      messages.innerHTML = '';
+      capitalsID.innerHTML = '';
       matchedCapitals = [];
     }
 
     function forceNext() {
-      updateEntityKnowledge( 0, "showNext", true, onloadCB = function(){} );
+      updateEntityKnowledge(0, 'showNext', true, onloadCB = function() {});
     }
   </script>
 
