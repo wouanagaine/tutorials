@@ -10,8 +10,8 @@ var httpURL;
 var wsURL;
 
 function createSimulation(user, project, version, onloadCB) {
-  httpURL = 'http://' + RUNTIME_URL + '/api/v1/' + user + '/' + project + '/' + version;
-  wsURL = 'ws://' + RUNTIME_URL + '/api/v1/' + user + '/' + project + '/' + version;
+  httpURL = 'https://' + RUNTIME_URL + '/api/v1/' + user + '/' + project + '/' + version;
+  wsURL = 'wss://' + RUNTIME_URL + '/api/v1/' + user + '/' + project + '/' + version;
   var oReq = new XMLHttpRequest();
   oReq.open('PUT', httpURL + '?' + 'scope=app', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
