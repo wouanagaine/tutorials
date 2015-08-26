@@ -1,0 +1,125 @@
+[
+  {
+    "version": "1.1.0"
+  },
+  {
+    "metadata": {
+      "label": "a18834b5-0f16-4fe6-81d1-82bcde8d96af"
+    },
+    "properties": {},
+    "children": [
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {},
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "Prompt",
+              "inputParams": [
+                {
+                  "key": "message",
+                  "type": "string",
+                  "value": "Enter a city name (e.g.  \"Berlin, Germany\")"
+                }
+              ],
+              "outputParams": [
+                {
+                  "key": "answer",
+                  "type": "entityKnowledge",
+                  "value": "answer"
+                }
+              ]
+            },
+            "children": [],
+            "id": "f38fdb15-e58c-42d2-b7c7-b654ec9e32d1",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "op1": {
+                "type": "entityKnowledge",
+                "value": "answer"
+              },
+              "op2": {
+                "type": "boolean",
+                "value": "true"
+              },
+              "op": "=="
+            },
+            "children": [],
+            "id": "08efea7f-5510-4ef5-8aa9-d296d165412c",
+            "type": "condition"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "statusCondition": "failsIfAnyFails",
+              "retryPolicy": "propagateToAll"
+            },
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "Say",
+                  "inputParams": [
+                    {
+                      "key": "message",
+                      "type": "entityKnowledge",
+                      "value": "answer"
+                    }
+                  ],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "97d50cef-8fa2-42d6-8b23-9177143fcacb",
+                "type": "action"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "DisplayCityWeather",
+                  "inputParams": [
+                    {
+                      "key": "city",
+                      "type": "entityKnowledge",
+                      "value": "answer"
+                    }
+                  ],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "c98cfa24-10b5-4e33-8f81-26e19cbc103f",
+                "type": "action"
+              }
+            ],
+            "id": "555144c4-e67f-4dc0-a10a-27c68b520737",
+            "type": "parallel"
+          }
+        ],
+        "id": "5bf2486e-ca28-4e67-b818-8aec21668804",
+        "type": "sequence"
+      }
+    ],
+    "id": "6c15d7f9-f460-4568-86ba-7bf098be332a"
+  }
+]

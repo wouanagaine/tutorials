@@ -41,7 +41,7 @@ function destroySimulation(onloadCB) {
   oReq.onload = onloadCB;
 }
 
-function createEntity(behavior, knowledge, onloadCB) {
+function createEntity(behavior, knowledge, onloadCB, onErrorCB) {
   var oReq = new XMLHttpRequest();
   oReq.open('PUT', httpURL + '/' + simID + '/entities', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
@@ -52,7 +52,7 @@ function createEntity(behavior, knowledge, onloadCB) {
     onloadCB(oReq.responseText);
   };
   oReq.onerror = function() {
-    alert('error while creating entity ');
+    onErrorCB();
   };
   var params = {};
   params.behavior = behavior;
