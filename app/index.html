@@ -162,7 +162,7 @@
       $('#run').prop('disabled', true);
       $('#submitsub').prop('disabled', true);
       createSimulation(TUTO_OWNER, TUTO_PROJECT, TUTO_BRANCH, function(instanceId) {
-        console.log('Simulation', instanceId, 'created');
+        console.log('Instance', instanceId, 'created');
         doWS();
         registerActions(function() {
           createEntity(TUTO_FOLDER + '/agent_0.bt', {}, function(responseText) {
@@ -178,6 +178,7 @@
           },
           function() {
             alert('error while creating agent');
+            exit();
           });
         });
       });
