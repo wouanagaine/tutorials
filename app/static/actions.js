@@ -4,6 +4,7 @@ var actionTable = [
   'ShowPic',
   'GetCapitals',
   'GetFirstElement',
+  'GetCityWeather',
   'DisplayCityWeather',
   'DisplayCityThumbnail',
   'EndOfSub',
@@ -129,40 +130,44 @@ function GetFirstElement(requestID, entityID, params) {
   }
 }
 
-function DisplayCityWeather(requestID, entityID, params) {
-  function getWeather(name) {
-    function displayOnMap(city, image) {
-      geocoder.geocode({'address': city}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          var img = {
-            url: image,
-            size: new google.maps.Size(50, 50),
-            anchor: new google.maps.Point(25, 25)
-          };
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            icon: img
-          });
-          map.panTo(results[0].geometry.location);
-          marker.setAnimation(google.maps.Animation.DROP);
-        }
-        else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
-    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + name, function(data) {
-      if (typeof(data.weather) !== 'undefined') {
-        displayOnMap(name, 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+function GetCityWeather(requestID, entityID, params) {
+  function getWeather(city) {
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city, function(data) {
+      if (data.weather !== undefined) {
+        sendSuccess(requestID, '{"weather":' + JSON.stringify(data.weather[0]) + '}');
       }
-      else if (name.split(',').length == 3) {
-        name = name.split(',')[0] + ',' + name.split(',')[2];
-        getWeather(name);
+      else if (city.split(',').length == 3) {
+        city = city.split(',')[0] + ',' + city.split(',')[2];
+        getWeather(city);
       }
     });
   }
-  getWeather(params.city);
+  getWeather(params.cityName);
+}
+
+function DisplayCityWeather(requestID, entityID, params) {
+  function displayOnMap(city, weather) {
+    geocoder.geocode({'address': city}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var img = {
+          url: 'http://openweathermap.org/img/w/' + weather.icon + '.png',
+          size: new google.maps.Size(50, 50),
+          anchor: new google.maps.Point(25, 25)
+        };
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          icon: img
+        });
+        map.panTo(results[0].geometry.location);
+        marker.setAnimation(google.maps.Animation.DROP);
+      }
+      else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+  displayOnMap(params.cityName, params.cityWeather);
   sendSuccess(requestID);
 }
 
@@ -187,9 +192,11 @@ function Debug(requestID, entityID, params) {
 }
 
 function Prompt(requestID, entityID, params) {
-  $('#prompt').on('hidden.bs.modal', function() {
+  var succeeds = function() {
+    $('#prompt').off('hidden.bs.modal', succeeds);
     sendSuccess(requestID, '{"answer":' + JSON.stringify($('#promptinput').val()) + '}');
-  });
+  };
+  $('#prompt').on('hidden.bs.modal', succeeds);
   $('#prompt').on('shown.bs.modal', function() {
     $('#promptinput').focus();
   });
