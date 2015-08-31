@@ -140,6 +140,9 @@ function GetCityWeather(requestID, entityID, params) {
         city = city.split(',')[0] + ',' + city.split(',')[2];
         getWeather(city);
       }
+      else {
+        sendFailure(requestID, '{"weather": { "description": "No weather found for ' + city + '"}}');
+      }
     });
   }
   getWeather(params.cityName);
@@ -164,6 +167,7 @@ function DisplayCityWeather(requestID, entityID, params) {
       }
       else {
         alert('Geocode was not successful for the following reason: ' + status);
+        sendFailure(requestID);
       }
     });
   }
