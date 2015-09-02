@@ -24,6 +24,7 @@ function registerActions(onloadCB) {
 
 function Say(requestID, entityID, params) {
   messages.innerHTML += '<br/>Agent ' + entityID + ' says: ' + params.message;
+  $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
   sendSuccess(requestID);
 }
 
@@ -43,7 +44,7 @@ function GetFrontPage(requestID, entityID, params) {
     item.subreddit = child.data.subreddit;
     item.url = child.data.url;
     item.thumbnail = child.data.thumbnail;
-    item.title = child.data.title;
+    item.name = child.data.title;
     item.id = child.data.id;
     item.permalink = child.data.permalink;
     usefull.push(item);
@@ -66,7 +67,7 @@ function ShowPic(requestID, entityID, params) {
     var kb = params.front[i];
     loading.innerHTML = 'refreshing...';
     if (kb.thumbnail.indexOf('http') === 0) {
-      messages.innerHTML += '<div class="col-md-3 col-sm-6""><div class="thumbnail" style="height:200px; overflow: hidden;"><a href="{0}" target="_blank"><img src="{1}" style="max-height: 100px;"></a><div class="caption"><p><a href="http://www.reddit.com/{3}" target="_blank">{2}</a></p></div></div></div>'.format(kb.url, kb.thumbnail, kb.title, kb.permalink, kb.subreddit);
+      messages.innerHTML += '<div class="col-md-3 col-sm-6""><div class="thumbnail" style="height:200px; overflow: hidden;"><a href="{0}" target="_blank"><img src="{1}" style="max-height: 100px;"></a><div class="caption"><p><a href="http://www.reddit.com/{3}" target="_blank">{2}</a></p></div></div></div>'.format(kb.url, kb.thumbnail, kb.name, kb.permalink, kb.subreddit);
     }
   }
   $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
@@ -77,11 +78,11 @@ function ShowPic(requestID, entityID, params) {
 }
 
 function GetCapitals(requestID, entityID, params) {
-  function matchCapital(title) {
+  function matchCapital(name) {
     var matching = '';
     countries.some(function(i) {
       var regex = new RegExp('\\b' + i.capital + '\\b', 'i');
-      regex.exec(title) !== null ? res = regex.toString().replace('/\\b', '').replace('\\b/i', '') : res = '';
+      regex.exec(name) !== null ? res = regex.toString().replace('/\\b', '').replace('\\b/i', '') : res = '';
       matching = res;
       return res;
     });
@@ -90,21 +91,20 @@ function GetCapitals(requestID, entityID, params) {
   var cityList = [];
   for (var i = 0; i < params.content.length; ++i) {
     var kb = params.content[i];
-    var capitalName = matchCapital(kb.title);
-    if (kb.thumbnail.indexOf('http') === 0) {
-      if (capitalName !== '') {
-        if (matchedCapitals.indexOf(capitalName) == -1) {
-          matchedCapitals.push(capitalName);
-          var j = 0;
-          for (var item in countries) {
-            if (countries[item].capital == capitalName) {
-              break;
-            }
-            j++;
+    var key = params.key || 'name';
+    var capitalName = matchCapital(kb[key]);
+    if (capitalName !== '') {
+      if (matchedCapitals.indexOf(capitalName) == -1) {
+        matchedCapitals.push(capitalName);
+        var j = 0;
+        for (var item in countries) {
+          if (countries[item].capital == capitalName) {
+            break;
           }
-          var cityName = countries[j].capital + ', ' + countries[j].name + ', ' + countries[j].code;
-          cityList.push({'name': cityName, 'pic': kb.thumbnail, 'url': kb.url});
+          j++;
         }
+        var cityName = countries[j].name;
+        cityList.push({'name': cityName, 'pic': kb.thumbnail, 'url': kb.url});
       }
     }
   }
@@ -120,13 +120,7 @@ function GetFirstElement(requestID, entityID, params) {
     var array = params.array;
     out.element = array.shift();
     out.capitals = array;
-    updateEntityKnowledge(entityID, 'capitals', null, function() {
-      updateEntityKnowledge(entityID, 'capitals', out.capitals, function() {
-        updateEntityKnowledge(entityID, 'nextCapital', out.element, function() {
-          sendSuccess(requestID);
-        });
-      });
-    });
+    sendSuccess(requestID, '{"capitals":' + JSON.stringify(out.capitals) + ', "element":' + JSON.stringify(out.element) + '}');
   }
 }
 
@@ -140,10 +134,15 @@ function GetCityWeather(requestID, entityID, params) {
         city = city.split(',')[0] + ',' + city.split(',')[2];
         getWeather(city);
       }
+      else if (city.split(',').length == 2) {
+        city = city.split(',')[0];
+        getWeather(city);
+      }
       else {
         sendFailure(requestID, '{"weather": { "description": "No weather found for ' + city + '"}}');
       }
-    });
+    })
+    .error(sendFailure(requestID));
   }
   getWeather(params.cityName);
 }
@@ -166,7 +165,7 @@ function DisplayCityWeather(requestID, entityID, params) {
         marker.setAnimation(google.maps.Animation.DROP);
       }
       else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        console.log('Geocode was not successful for the following reason: ' + status);
         sendFailure(requestID);
       }
     });
