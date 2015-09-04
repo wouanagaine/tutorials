@@ -4,24 +4,27 @@ var actionTable = [
   'ShowPic',
   'GetCapitals',
   'GetFirstElement',
+  'GetCityWeather',
   'DisplayCityWeather',
   'DisplayCityThumbnail',
   'EndOfSub',
-  'Debug'
+  'Debug',
+  'Prompt'
 ];
 
 function registerActions(onloadCB) {
   var actionCopyTable = actionTable.slice(0);
   function recursiveReg() {
     var actionName = actionCopyTable.shift();
-    var actionObject = {"name":actionName, "start":actionName, "cancel":"cancel"};
-    registerAction(JSON.stringify(actionObject), actionCopyTable.length == 0 ? onloadCB : recursiveReg);
+    var actionObject = {'name':actionName, 'start':actionName, 'cancel':'cancel'};
+    registerAction(JSON.stringify(actionObject), actionCopyTable.length === 0 ? onloadCB : recursiveReg);
   }
   recursiveReg();
 }
 
 function Say(requestID, entityID, params) {
-  messages.innerHTML += '<br/>' + entityID + ' : ' + params.message;
+  messages.innerHTML += '<br/>Agent ' + entityID + ' says: ' + params.message;
+  $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
   sendSuccess(requestID);
 }
 
@@ -29,7 +32,7 @@ function GetFrontPage(requestID, entityID, params) {
   loading.innerHTML = 'loading...';
   console.log('requesting front page');
   $.getJSON('http://www.reddit.com/r/{0}/new/.json?limit=16&after=t3_{1}&show=all&sr_detail&jsonp=?'.format(params.subreddit, params.after), function(data) {
-    if (data.data.children.length == 0) {
+    if (data.data.children.length === 0) {
       sendFailure(requestID, JSON.stringify({'reason': 'No more posts here'}));
     }
     else {
@@ -41,7 +44,7 @@ function GetFrontPage(requestID, entityID, params) {
     item.subreddit = child.data.subreddit;
     item.url = child.data.url;
     item.thumbnail = child.data.thumbnail;
-    item.title = child.data.title;
+    item.name = child.data.title;
     item.id = child.data.id;
     item.permalink = child.data.permalink;
     usefull.push(item);
@@ -60,114 +63,114 @@ function GetFrontPage(requestID, entityID, params) {
 }
 
 function ShowPic(requestID, entityID, params) {
-  getEntityKnowledge(entityID, onloadCB = function(resp) {
-    for (var i = 0; i < resp.front.length; ++i) {
-      var kb = resp.front[i];
-      loading.innerHTML = 'refreshing...';
-      if (kb.thumbnail.indexOf('http') === 0) {
-        messages.innerHTML += '<div class="col-md-3 col-sm-6""><div class="thumbnail" style="height:200px; overflow: hidden;"><a href="{0}" target="_blank"><img src="{1}" style="max-height: 100px;"></a><div class="caption"><p><a href="http://www.reddit.com/{3}" target="_blank">{2}</a></p></div></div></div>'.format(kb.url, kb.thumbnail, kb.title, kb.permalink, kb.subreddit);
-      }
+  for (var i = 0; i < params.front.length; ++i) {
+    var kb = params.front[i];
+    loading.innerHTML = 'refreshing...';
+    if (kb.thumbnail.indexOf('http') === 0) {
+      messages.innerHTML += '<div class="col-md-3 col-sm-6""><div class="thumbnail" style="height:200px; overflow: hidden;"><a href="{0}" target="_blank"><img src="{1}" style="max-height: 100px;"></a><div class="caption"><p><a href="http://www.reddit.com/{3}" target="_blank">{2}</a></p></div></div></div>'.format(kb.url, kb.thumbnail, kb.name, kb.permalink, kb.subreddit);
     }
-    $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
-    updateEntityKnowledge(entityID, 'front', 0, function() {
-      loading.innerHTML = '';
-      sendSuccess(requestID);
-    });
+  }
+  $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
+  updateEntityKnowledge(entityID, 'front', 0, function() {
+    loading.innerHTML = '';
+    sendSuccess(requestID);
   });
 }
 
 function GetCapitals(requestID, entityID, params) {
-  function matchCapital(title) {
+  function matchCapital(name) {
     var matching = '';
     countries.some(function(i) {
       var regex = new RegExp('\\b' + i.capital + '\\b', 'i');
-      regex.exec(title) !== null ? res = regex.toString().replace('/\\b', '').replace('\\b/i', '') : res = '';
+      regex.exec(name) !== null ? res = regex.toString().replace('/\\b', '').replace('\\b/i', '') : res = '';
       matching = res;
       return res;
     });
     return matching;
   }
-  getEntityKnowledge(entityID, onloadCB = function(resp) {
-    var cityList = [];
-    for (var i = 0; i < resp.results.content.length; ++i) {
-      var kb = resp.results.content[i];
-      var capitalName = matchCapital(kb.title);
-      if (kb.thumbnail.indexOf('http') === 0) {
-        if (capitalName != '') {
-          if (matchedCapitals.indexOf(capitalName) == -1) {
-            matchedCapitals.push(capitalName);
-            var j = 0;
-            for (var item in countries) {
-              if (countries[item].capital == capitalName) {
-                break;
-              }
-              j++;
-            }
-            var cityName = countries[j].capital + ', ' + countries[j].name + ', ' + countries[j].code;
-            cityList.push({'name': cityName, 'pic': kb.thumbnail, 'url': kb.url});
+  var cityList = [];
+  for (var i = 0; i < params.content.length; ++i) {
+    var kb = params.content[i];
+    var key = params.key || 'name';
+    var capitalName = matchCapital(kb[key]);
+    if (capitalName !== '') {
+      if (matchedCapitals.indexOf(capitalName) == -1) {
+        matchedCapitals.push(capitalName);
+        var j = 0;
+        for (var item in countries) {
+          if (countries[item].capital == capitalName) {
+            break;
           }
+          j++;
         }
+        var cityName = countries[j].name;
+        cityList.push({'name': cityName, 'pic': kb.thumbnail, 'url': kb.url});
       }
     }
-    sendSuccess(requestID, '{"capitals":' + JSON.stringify(cityList) + '}');
-  });
+  }
+  sendSuccess(requestID, '{"capitals":' + JSON.stringify(cityList) + '}');
 }
 
 function GetFirstElement(requestID, entityID, params) {
-  getEntityKnowledge(entityID, onloadCB = function(resp) {
-    if (resp.capitals === null) {
-      sendFailure(requestID);
-    }
-    else {
-      var out = {};
-      var array = resp.capitals;
-      out.element = array.shift();
-      out.capitals = array;
-      updateEntityKnowledge(entityID, 'capitals', null, function() {
-        updateEntityKnowledge(entityID, 'capitals', out.capitals, function() {
-          updateEntityKnowledge(entityID, 'nextCapital', out.element, function() {
-            sendSuccess(requestID);
-          });
-        });
-      });
-    }
-  });
+  if (params.array === null) {
+    sendFailure(requestID);
+  }
+  else {
+    var out = {};
+    var array = params.array;
+    out.element = array.shift();
+    out.capitals = array;
+    sendSuccess(requestID, '{"capitals":' + JSON.stringify(out.capitals) + ', "element":' + JSON.stringify(out.element) + '}');
+  }
+}
+
+function GetCityWeather(requestID, entityID, params) {
+  function getWeather(city) {
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city, function(data) {
+      if (data.weather !== undefined) {
+        sendSuccess(requestID, '{"weather":' + JSON.stringify(data.weather[0]) + '}');
+      }
+      else if (city.split(',').length == 3) {
+        city = city.split(',')[0] + ',' + city.split(',')[2];
+        getWeather(city);
+      }
+      else if (city.split(',').length == 2) {
+        city = city.split(',')[0];
+        getWeather(city);
+      }
+      else {
+        sendFailure(requestID, '{"weather": { "description": "No weather found for ' + city + '"}}');
+      }
+    })
+    .error(sendFailure(requestID));
+  }
+  getWeather(params.cityName);
 }
 
 function DisplayCityWeather(requestID, entityID, params) {
-  function getWeather(name) {
-    function displayOnMap(city, image) {
-      geocoder.geocode({'address': city}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          var img = {
-            url: image,
-            size: new google.maps.Size(50, 50),
-            anchor: new google.maps.Point(25, 25)
-          };
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location,
-            icon: img
-          });
-          map.panTo(results[0].geometry.location);
-          marker.setAnimation(google.maps.Animation.DROP);
-        }
-        else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
-    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + name, function(data) {
-      if (typeof(data.weather) !== 'undefined') {
-        displayOnMap(name, 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+  function displayOnMap(city, weather) {
+    geocoder.geocode({'address': city}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var img = {
+          url: 'http://openweathermap.org/img/w/' + weather.icon + '.png',
+          size: new google.maps.Size(50, 50),
+          anchor: new google.maps.Point(25, 25)
+        };
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          icon: img
+        });
+        map.panTo(results[0].geometry.location);
+        marker.setAnimation(google.maps.Animation.DROP);
       }
-      else if (name.split(',').length == 3) {
-        name = name.split(',')[0] + ',' + name.split(',')[2];
-        getWeather(name);
+      else {
+        console.log('Geocode was not successful for the following reason: ' + status);
+        sendFailure(requestID);
       }
     });
   }
-  getWeather(params.city.name);
+  displayOnMap(params.cityName, params.cityWeather);
   sendSuccess(requestID);
 }
 
@@ -187,6 +190,20 @@ function EndOfSub(requestID, entityID, params) {
 }
 
 function Debug(requestID, entityID, params) {
-  console.log('message from', entityID + ':', params.message);
+  console.log('message from agent', entityID + ':', params.message);
   sendSuccess(requestID);
+}
+
+function Prompt(requestID, entityID, params) {
+  var succeeds = function() {
+    $('#prompt').off('hidden.bs.modal', succeeds);
+    sendSuccess(requestID, '{"answer":' + JSON.stringify($('#promptinput').val()) + '}');
+  };
+  $('#prompt').on('hidden.bs.modal', succeeds);
+  $('#prompt').on('shown.bs.modal', function() {
+    $('#promptinput').focus();
+  });
+  $('#promptinput').prop('value', '');
+  promptmessage.innerHTML = params.message;
+  $('#prompt').modal('show');
 }

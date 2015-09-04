@@ -1,16 +1,15 @@
 [
   {
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   {
-    "uuid": "eee40b31-0e64-4c8b-a95e-5be7f22b01b5",
-    "name": "tuto_city_manager",
-    "description": "",
+    "metadata": {
+      "label": "tuto_city_manager"
+    },
+    "properties": {},
     "children": [
       {
-        "id": "e46bf722-7834-41d2-a1e3-fadfc0eee31f",
         "activated": true,
-        "type": "sequence",
         "metadata": {
           "label": "",
           "itemTemplate": "BTSequenceNode.qml"
@@ -18,313 +17,264 @@
         "properties": {},
         "children": [
           {
-            "id": "c6d83c2b-c5d4-42fc-a244-d8911e161f6a",
             "activated": true,
-            "type": "subscribeMessage",
             "metadata": {
               "label": "",
               "itemTemplate": "BTSubscribeMessageNode.qml"
             },
             "properties": {
-              "mode": "subscribe",
               "channel": {
-                "value": "cityMgr",
-                "type": "string"
-              }
+                "type": "string",
+                "value": "cityMgr"
+              },
+              "mode": "subscribe"
             },
-            "children": []
+            "children": [],
+            "id": "c6d83c2b-c5d4-42fc-a244-d8911e161f6a",
+            "type": "subscribeMessage"
           },
           {
-            "id": "7396e46c-ec89-438a-850a-b9581b0d313a",
             "activated": true,
-            "type": "until",
             "metadata": {
               "label": "",
-              "itemTemplate": "BTUntilNode.qml"
+              "itemTemplate": "BTSelectorPrio.qml"
             },
             "properties": {
-              "op1": {
-                "value": "true",
-                "type": "boolean"
-              },
-              "op2": {
-                "value": "false",
-                "type": "boolean"
-              },
-              "op": "=="
+              "active": "true"
             },
             "children": [
               {
-                "id": "d194ca3a-b895-447a-a4c1-8fb82db5d973",
                 "activated": true,
-                "type": "priority",
                 "metadata": {
                   "label": "",
-                  "itemTemplate": "BTSelectorPrio.qml"
+                  "itemTemplate": "BTSequenceNode.qml"
                 },
-                "properties": {
-                  "active": "true"
-                },
+                "properties": {},
                 "children": [
                   {
-                    "id": "f4cb8191-d913-4bb8-9629-5272979a5a60",
                     "activated": true,
-                    "type": "until",
                     "metadata": {
                       "label": "",
-                      "itemTemplate": "BTUntilNode.qml"
+                      "itemTemplate": "BTReceiveMessageNode.qml"
+                    },
+                    "properties": {
+                      "channel": {
+                        "type": "string",
+                        "value": "cityMgr"
+                      },
+                      "sender": "",
+                      "content": "results"
+                    },
+                    "children": [],
+                    "id": "ebda6634-27e5-4034-9ac2-771b3478e50d",
+                    "type": "receiveMessage"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": "always succeeds",
+                      "itemTemplate": "BTActionNode.qml"
+                    },
+                    "properties": {
+                      "name": "GetCapitals",
+                      "inputParams": [
+                        {
+                          "key": "content",
+                          "type": "entityKnowledge",
+                          "value": "results.content"
+                        }
+                      ],
+                      "outputParams": [
+                        {
+                          "key": "capitals",
+                          "type": "entityKnowledge",
+                          "value": "capitals"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "id": "14b1324b-5a51-4fa7-9db4-2a13bbc040d3",
+                    "type": "action"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
                     },
                     "properties": {
                       "op1": {
-                        "value": "true",
-                        "type": "boolean"
+                        "type": "boolean",
+                        "value": "true"
                       },
                       "op2": {
-                        "value": "false",
-                        "type": "boolean"
+                        "type": "boolean",
+                        "value": "false"
                       },
                       "op": "=="
                     },
                     "children": [
                       {
-                        "id": "f78f8abd-8c46-4ae2-b64c-9fd8fe40be1f",
                         "activated": true,
-                        "type": "priority",
                         "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTSelectorPrio.qml"
+                          "label": ""
                         },
-                        "properties": {
-                          "active": "false"
-                        },
+                        "properties": {},
                         "children": [
                           {
-                            "id": "d3517efe-fa2f-4945-bea6-bcec1cebe411",
                             "activated": true,
-                            "type": "sequence",
                             "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTSequenceNode.qml"
+                              "label": "Fails if the \"capitals\" array is empty",
+                              "itemTemplate": "BTActionNode.qml"
                             },
-                            "properties": {},
-                            "children": [
-                              {
-                                "id": "3d7cab47-597b-425c-ba76-454438ff6cf9",
-                                "activated": true,
-                                "type": "action",
-                                "metadata": {
-                                  "label": "Fails if the \"capitals\" array is empty",
-                                  "itemTemplate": "BTActionNode.qml"
+                            "properties": {
+                              "name": "GetFirstElement",
+                              "inputParams": [
+                                {
+                                  "key": "array",
+                                  "type": "entityKnowledge",
+                                  "value": "capitals"
+                                }
+                              ],
+                              "outputParams": [
+                                {
+                                  "key": "element",
+                                  "type": "entityKnowledge",
+                                  "value": "nextCapital"
                                 },
-                                "properties": {
-                                  "name": "GetFirstElement",
-                                  "inputParams": [
-                                    {
-                                      "key": "array",
-                                      "value": "capitals",
-                                      "type": "entityKnowledge"
-                                    }
-                                  ],
-                                  "outputParams": [
-                                    {
-                                      "key": "element",
-                                      "value": "nextCapital",
-                                      "type": "entityKnowledge"
-                                    },
-                                    {
-                                      "key": "capitals",
-                                      "value": "capitals",
-                                      "type": "entityKnowledge"
-                                    }
-                                  ]
-                                },
-                                "children": []
-                              },
-                              {
-                                "id": "dff82afc-3517-4578-a97e-b49129010d7b",
-                                "activated": true,
-                                "type": "parallel",
-                                "metadata": {
-                                  "label": "",
-                                  "itemTemplate": "BTParallelNode.qml"
-                                },
-                                "properties": {
-                                  "statusCondition": "failsIfAnyFails",
-                                  "retryPolicy": "propagateToRunning"
-                                },
-                                "children": [
-                                  {
-                                    "id": "15401a6a-bddd-408c-9434-e6e156e7e025",
-                                    "activated": true,
-                                    "type": "action",
-                                    "metadata": {
-                                      "label": "",
-                                      "itemTemplate": "BTActionNode.qml"
-                                    },
-                                    "properties": {
-                                      "name": "DisplayCityWeather",
-                                      "inputParams": [
-                                        {
-                                          "key": "city",
-                                          "value": "nextCapital",
-                                          "type": "entityKnowledge"
-                                        }
-                                      ],
-                                      "outputParams": []
-                                    },
-                                    "children": []
-                                  },
-                                  {
-                                    "id": "696d9a4b-4c83-4cf4-aa19-cdd0968b36ea",
-                                    "activated": true,
-                                    "type": "action",
-                                    "metadata": {
-                                      "label": "",
-                                      "itemTemplate": "BTActionNode.qml"
-                                    },
-                                    "properties": {
-                                      "name": "DisplayCityThumbnail",
-                                      "inputParams": [
-                                        {
-                                          "key": "city",
-                                          "value": "nextCapital",
-                                          "type": "entityKnowledge"
-                                        }
-                                      ],
-                                      "outputParams": []
-                                    },
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
+                                {
+                                  "key": "capitals",
+                                  "type": "entityKnowledge",
+                                  "value": "capitals"
+                                }
+                              ]
+                            },
+                            "children": [],
+                            "id": "3d7cab47-597b-425c-ba76-454438ff6cf9",
+                            "type": "action"
                           },
                           {
-                            "id": "c274589a-4f27-4e24-84ed-44739993766a",
                             "activated": true,
-                            "type": "sequence",
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "name": "GetCityWeather",
+                              "inputParams": [
+                                {
+                                  "key": "cityName",
+                                  "type": "entityKnowledge",
+                                  "value": "nextCapital.name"
+                                }
+                              ],
+                              "outputParams": [
+                                {
+                                  "key": "weather",
+                                  "type": "entityKnowledge",
+                                  "value": "nextCapital.weather"
+                                }
+                              ]
+                            },
+                            "children": [],
+                            "id": "f0106d26-c012-4b5c-ae9a-82a77eb100e0",
+                            "type": "action"
+                          },
+                          {
+                            "activated": true,
                             "metadata": {
                               "label": "",
-                              "itemTemplate": "BTSequenceNode.qml"
+                              "itemTemplate": "BTParallelNode.qml"
                             },
-                            "properties": {},
+                            "properties": {
+                              "statusCondition": "failsIfAnyFails",
+                              "retryPolicy": "propagateToAll"
+                            },
                             "children": [
                               {
-                                "id": "5bf6eff5-f8ad-441a-b1f0-351179e27502",
                                 "activated": true,
-                                "type": "action",
                                 "metadata": {
                                   "label": "",
                                   "itemTemplate": "BTActionNode.qml"
                                 },
                                 "properties": {
-                                  "name": "Wait",
+                                  "name": "DisplayCityWeather",
                                   "inputParams": [
                                     {
-                                      "key": "time",
-                                      "value": "1.5",
-                                      "type": "real"
+                                      "key": "cityName",
+                                      "type": "entityKnowledge",
+                                      "value": "nextCapital.name"
+                                    },
+                                    {
+                                      "key": "cityWeather",
+                                      "type": "entityKnowledge",
+                                      "value": "nextCapital.weather"
                                     }
                                   ],
                                   "outputParams": []
                                 },
-                                "children": []
+                                "children": [],
+                                "id": "15401a6a-bddd-408c-9434-e6e156e7e025",
+                                "type": "action"
                               },
                               {
-                                "id": "ebda6634-27e5-4034-9ac2-771b3478e50d",
                                 "activated": true,
-                                "type": "receiveMessage",
                                 "metadata": {
                                   "label": "",
-                                  "itemTemplate": "BTReceiveMessageNode.qml"
-                                },
-                                "properties": {
-                                  "sender": "",
-                                  "content": "results",
-                                  "channel": {
-                                    "value": "cityMgr",
-                                    "type": "string"
-                                  }
-                                },
-                                "children": []
-                              },
-                              {
-                                "id": "14b1324b-5a51-4fa7-9db4-2a13bbc040d3",
-                                "activated": true,
-                                "type": "action",
-                                "metadata": {
-                                  "label": "always succeeds",
                                   "itemTemplate": "BTActionNode.qml"
                                 },
                                 "properties": {
-                                  "name": "GetCapitals",
+                                  "name": "DisplayCityThumbnail",
                                   "inputParams": [
                                     {
-                                      "key": "content",
-                                      "value": "results.content",
-                                      "type": "entityKnowledge"
+                                      "key": "city",
+                                      "type": "entityKnowledge",
+                                      "value": "nextCapital"
                                     }
                                   ],
-                                  "outputParams": [
-                                    {
-                                      "key": "capitals",
-                                      "value": "capitals",
-                                      "type": "entityKnowledge"
-                                    }
-                                  ]
+                                  "outputParams": []
                                 },
-                                "children": []
+                                "children": [],
+                                "id": "696d9a4b-4c83-4cf4-aa19-cdd0968b36ea",
+                                "type": "action"
                               }
-                            ]
+                            ],
+                            "id": "dff82afc-3517-4578-a97e-b49129010d7b",
+                            "type": "parallel"
                           }
-                        ]
+                        ],
+                        "id": "24c64d18-040f-4e29-aec5-f36be66f75cf",
+                        "type": "sequence"
                       }
-                    ]
-                  },
-                  {
-                    "id": "862ba7f0-7a8f-4e85-b66b-c0f51887e993",
-                    "activated": true,
-                    "type": "sendMessage",
-                    "metadata": {
-                      "label": "if anything fails, notify the Reddit Manager",
-                      "itemTemplate": "BTSendMessageNode.qml"
-                    },
-                    "properties": {
-                      "inputParams": [],
-                      "channel": {
-                        "value": "redditMgr",
-                        "type": "string"
-                      }
-                    },
-                    "children": []
-                  },
-                  {
-                    "id": "2c77380e-dd40-49db-8979-3bb40e20d6d6",
-                    "activated": true,
-                    "type": "condition",
-                    "metadata": {
-                      "label": "",
-                      "itemTemplate": "BTConditionNode.qml"
-                    },
-                    "properties": {
-                      "op1": {
-                        "value": "true",
-                        "type": "boolean"
-                      },
-                      "op2": {
-                        "value": "true",
-                        "type": "boolean"
-                      },
-                      "op": "=="
-                    },
-                    "children": []
+                    ],
+                    "id": "a09a7029-2f92-488e-8904-3e937fe9956f",
+                    "type": "until"
                   }
-                ]
+                ],
+                "id": "c274589a-4f27-4e24-84ed-44739993766a",
+                "type": "sequence"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "name": "Stall",
+                  "inputParams": [],
+                  "outputParams": []
+                },
+                "children": [],
+                "id": "eec40c1c-454d-416c-8034-efcdb985bb5b",
+                "type": "action"
               }
-            ]
+            ],
+            "id": "d194ca3a-b895-447a-a4c1-8fb82db5d973",
+            "type": "priority"
           }
-        ]
+        ],
+        "id": "e46bf722-7834-41d2-a1e3-fadfc0eee31f",
+        "type": "sequence"
       }
-    ]
+    ],
+    "id": "eee40b31-0e64-4c8b-a95e-5be7f22b01b5"
   }
 ]

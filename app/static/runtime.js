@@ -19,7 +19,7 @@ function createSimulation(user, project, version, onloadCB) {
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
   oReq.onload = function() {
-    simID = oReq.responseText;
+    simID = JSON.parse(oReq.responseText).instance.instance_id;
     onloadCB(simID);
   };
   oReq.onerror = function() {
@@ -41,7 +41,7 @@ function destroySimulation(onloadCB) {
   oReq.onload = onloadCB;
 }
 
-function createEntity(behavior, knowledge, onloadCB) {
+function createEntity(behavior, knowledge, onloadCB, onErrorCB) {
   var oReq = new XMLHttpRequest();
   oReq.open('PUT', httpURL + '/' + simID + '/entities', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
@@ -49,10 +49,10 @@ function createEntity(behavior, knowledge, onloadCB) {
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
   oReq.onload = function() {
-    onloadCB(oReq.responseText);
+    onloadCB();
   };
   oReq.onerror = function() {
-    alert('error while creating entity ');
+    onErrorCB();
   };
   var params = {};
   params.behavior = behavior;
@@ -86,7 +86,7 @@ function getEntityKnowledge(entityID, onloadCB) {
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
   oReq.onload = function() {
-    onloadCB(JSON.parse(oReq.responseText));
+    onloadCB(JSON.parse(oReq.responseText).knowledge);
   };
   oReq.onerror = function(e) {
     alert('error ' + e.target.status + ' while retrieving the knowledge');
@@ -143,21 +143,6 @@ function sendCancel(requestID) {
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
   oReq.send();
 }
-function setOutput(requestID, jsonString, onloadCB) {
-  var oReq = new XMLHttpRequest();
-  oReq.open('POST', httpURL + '/' + simID + '/actions/' + requestID + '/output', true);
-  oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
-  oReq.setRequestHeader('accept', '');
-  oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
-  oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
-  oReq.onload = function(responseText) {
-    onloadCB();
-  };
-  oReq.onerror = function() {
-    alert('error while setting output of action request ' + requestID);
-  };
-  oReq.send(jsonString);
-}
 
 function registerAction(jsonString, onloadCB) {
   var oReq = new XMLHttpRequest();
@@ -166,7 +151,7 @@ function registerAction(jsonString, onloadCB) {
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
-  oReq.onload = function(responseText) {
+  oReq.onload = function() {
     console.log('action', JSON.parse(jsonString).name, 'registred');
     onloadCB();
   };
