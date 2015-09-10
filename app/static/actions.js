@@ -71,10 +71,8 @@ function ShowPic(requestID, entityID, params) {
     }
   }
   $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
-  updateEntityKnowledge(entityID, 'front', 0, function() {
-    loading.innerHTML = '';
-    sendSuccess(requestID);
-  });
+  loading.innerHTML = '';
+  sendSuccess(requestID);
 }
 
 function GetCapitals(requestID, entityID, params) {

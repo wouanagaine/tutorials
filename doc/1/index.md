@@ -15,11 +15,11 @@ From this page you can add new **bt** files to your project by using the **Creat
 
 Create a new behavior tree file with the path `bts/tutorials/agent_0`. Validating the creation will display two more elements in the window: at the top you will find the **palette** with the list of available nodes, and just below is the canvas which will be the space where you will place the nodes and define the links between them, thereby constituting the behavior trees.
 
-![screenshot of the craft ai editor](workbench.png "Palette and canvas")
+![screenshot of the craft ai editor](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/1/workbench.png "Palette and canvas")
 
 ## Adding an action node to the behavior ##
 
-From the palette, drag the [action node](http://doc.craft.ai/concepts_architecture/behaviors/index.html#action-node) ![action node](action.png) and drop it into the canvas below. The node will be added to the canvas and double clicking on it will open its properties editor. You will find the following properties:
+From the palette, drag the [action node](http://doc.craft.ai/behaviors/action/index.html) (<span class='craft-node-action'></span>) and drop it into the canvas below. The node will be added to the canvas and double clicking on it will open its properties editor. You will find the following properties:
 
 - The `Action URI path` field where to input the name of the action that you want to call,
 - The `Input Parameters` panel where to add as many inputs as needed,
@@ -30,7 +30,7 @@ Both input and output parameters are defined by a name, a type and a value.
 > Note that all properties are case sensitive.
 
 Put "Say" as the `Action URI path` and add an `input parameter` named "message" with a `string` value "Hello World!". Save the file (using the Ctrl+S shortcut or the `Save` button in the toolbar).
-![The "Say" action with the expected properties](SayActionProperties.png "'Say' action properties")
+![The "Say" action with the expected properties](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/1/SayActionProperties.png "'Say' action properties")
 
 Go to [the tutorial page](http://www.craft.ai/tutorials/) and run your fork of the **Tutorials** project with the `behaviors folder` field set to `bts/tutorials`.
 

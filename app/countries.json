@@ -1,1467 +1,1754 @@
 [
   {
     "code": "AF",
-    "name": "Afghanistan",
-    "capital": "Kabul"
+    "country": "Afghanistan",
+    "capital": "Kabul",
+    "name": "Kabul, Afghanistan, AF"
   },
   {
     "code": "AX",
-    "name": "Åland Islands",
-    "capital": "Mariehamn"
+    "country": "Åland Islands",
+    "capital": "Mariehamn",
+    "name": "Mariehamn, Åland Islands, AX"
   },
   {
     "code": "AL",
-    "name": "Albania",
-    "capital": "Tirana"
+    "country": "Albania",
+    "capital": "Tirana",
+    "name": "Tirana, Albania, AL"
   },
   {
     "code": "DZ",
-    "name": "Algeria",
-    "capital": "Algiers"
+    "country": "Algeria",
+    "capital": "Algiers",
+    "name": "Algiers, Algeria, DZ"
   },
   {
     "code": "AS",
-    "name": "American Samoa",
-    "capital": "Pago Pago"
+    "country": "American Samoa",
+    "capital": "Pago Pago",
+    "name": "Pago Pago, American Samoa, AS"
   },
   {
     "code": "AD",
-    "name": "Andorra",
-    "capital": "Andorra la Vella"
+    "country": "Andorra",
+    "capital": "Andorra la Vella",
+    "name": "Andorra la Vella, Andorra, AD"
   },
   {
     "code": "AO",
-    "name": "Angola",
-    "capital": "Luanda"
+    "country": "Angola",
+    "capital": "Luanda",
+    "name": "Luanda, Angola, AO"
   },
   {
     "code": "AI",
-    "name": "Anguilla",
-    "capital": "The Valley"
+    "country": "Anguilla",
+    "capital": "The Valley",
+    "name": "The Valley, Anguilla, AI"
   },
   {
     "code": "AG",
-    "name": "Antigua and Barbuda",
-    "capital": "Saint John's"
+    "country": "Antigua and Barbuda",
+    "capital": "Saint John's",
+    "name": "Saint John's, Antigua and Barbuda, AG"
   },
   {
     "code": "AR",
-    "name": "Argentina",
-    "capital": "Buenos Aires"
+    "country": "Argentina",
+    "capital": "Buenos Aires",
+    "name": "Buenos Aires, Argentina, AR"
   },
   {
     "code": "AM",
-    "name": "Armenia",
-    "capital": "Yerevan"
+    "country": "Armenia",
+    "capital": "Yerevan",
+    "name": "Yerevan, Armenia, AM"
   },
   {
     "code": "AW",
-    "name": "Aruba",
-    "capital": "Oranjestad"
+    "country": "Aruba",
+    "capital": "Oranjestad",
+    "name": "Oranjestad, Aruba, AW"
   },
   {
     "code": "AU",
-    "name": "Australia",
-    "capital": "Canberra"
+    "country": "Australia",
+    "capital": "Canberra",
+    "name": "Canberra, Australia, AU"
   },
   {
     "code": "AT",
-    "name": "Austria",
-    "capital": "Vienna"
+    "country": "Austria",
+    "capital": "Vienna",
+    "name": "Vienna, Austria, AT"
   },
   {
     "code": "AZ",
-    "name": "Azerbaijan",
-    "capital": "Baku"
+    "country": "Azerbaijan",
+    "capital": "Baku",
+    "name": "Baku, Azerbaijan, AZ"
   },
   {
     "code": "BS",
-    "name": "The Bahamas",
-    "capital": "Nassau"
+    "country": "The Bahamas",
+    "capital": "Nassau",
+    "name": "Nassau, The Bahamas, BS"
   },
   {
     "code": "BH",
-    "name": "Bahrain",
-    "capital": "Manama"
+    "country": "Bahrain",
+    "capital": "Manama",
+    "name": "Manama, Bahrain, BH"
   },
   {
     "code": "BD",
-    "name": "Bangladesh",
-    "capital": "Dhaka"
+    "country": "Bangladesh",
+    "capital": "Dhaka",
+    "name": "Dhaka, Bangladesh, BD"
   },
   {
     "code": "BB",
-    "name": "Barbados",
-    "capital": "Bridgetown"
+    "country": "Barbados",
+    "capital": "Bridgetown",
+    "name": "Bridgetown, Barbados, BB"
   },
   {
     "code": "BY",
-    "name": "Belarus",
-    "capital": "Minsk"
+    "country": "Belarus",
+    "capital": "Minsk",
+    "name": "Minsk, Belarus, BY"
   },
   {
     "code": "BE",
-    "name": "Belgium",
-    "capital": "Brussels"
+    "country": "Belgium",
+    "capital": "Brussels",
+    "name": "Brussels, Belgium, BE"
   },
   {
     "code": "BZ",
-    "name": "Belize",
-    "capital": "Belmopan"
+    "country": "Belize",
+    "capital": "Belmopan",
+    "name": "Belmopan, Belize, BZ"
   },
   {
     "code": "BJ",
-    "name": "Benin",
-    "capital": "Porto-Novo"
+    "country": "Benin",
+    "capital": "Porto-Novo",
+    "name": "Porto-Novo, Benin, BJ"
   },
   {
     "code": "BM",
-    "name": "Bermuda",
-    "capital": "Hamilton"
+    "country": "Bermuda",
+    "capital": "Hamilton",
+    "name": "Hamilton, Bermuda, BM"
   },
   {
     "code": "BT",
-    "name": "Bhutan",
-    "capital": "Thimphu"
+    "country": "Bhutan",
+    "capital": "Thimphu",
+    "name": "Thimphu, Bhutan, BT"
   },
   {
     "code": "BO",
-    "name": "Bolivia",
-    "capital": "Sucre"
+    "country": "Bolivia",
+    "capital": "Sucre",
+    "name": "Sucre, Bolivia, BO"
   },
   {
     "code": "BQ",
-    "name": "Bonaire",
-    "capital": "Kralendijk"
+    "country": "Bonaire",
+    "capital": "Kralendijk",
+    "name": "Kralendijk, Bonaire, BQ"
   },
   {
     "code": "BA",
-    "name": "Bosnia and Herzegovina",
-    "capital": "Sarajevo"
+    "country": "Bosnia and Herzegovina",
+    "capital": "Sarajevo",
+    "name": "Sarajevo, Bosnia and Herzegovina, BA"
   },
   {
     "code": "BW",
-    "name": "Botswana",
-    "capital": "Gaborone"
+    "country": "Botswana",
+    "capital": "Gaborone",
+    "name": "Gaborone, Botswana, BW"
   },
   {
     "code": "BR",
-    "name": "Brazil",
-    "capital": "Brasília"
+    "country": "Brazil",
+    "capital": "Brasília",
+    "name": "Brasília, Brazil, BR"
   },
   {
     "code": "IO",
-    "name": "British Indian Ocean Territory",
-    "capital": "Diego Garcia"
+    "country": "British Indian Ocean Territory",
+    "capital": "Diego Garcia",
+    "name": "Diego Garcia, British Indian Ocean Territory, IO"
   },
   {
     "code": "VG",
-    "name": "British Virgin Islands",
-    "capital": "Road Town"
+    "country": "British Virgin Islands",
+    "capital": "Road Town",
+    "name": "Road Town, British Virgin Islands, VG"
   },
   {
     "code": "BN",
-    "name": "Brunei",
-    "capital": "Bandar Seri Begawan"
+    "country": "Brunei",
+    "capital": "Bandar Seri Begawan",
+    "name": "Bandar Seri Begawan, Brunei, BN"
   },
   {
     "code": "BG",
-    "name": "Bulgaria",
-    "capital": "Sofia"
+    "country": "Bulgaria",
+    "capital": "Sofia",
+    "name": "Sofia, Bulgaria, BG"
   },
   {
     "code": "BF",
-    "name": "Burkina Faso",
-    "capital": "Ouagadougou"
+    "country": "Burkina Faso",
+    "capital": "Ouagadougou",
+    "name": "Ouagadougou, Burkina Faso, BF"
   },
   {
     "code": "BI",
-    "name": "Burundi",
-    "capital": "Bujumbura"
+    "country": "Burundi",
+    "capital": "Bujumbura",
+    "name": "Bujumbura, Burundi, BI"
   },
   {
     "code": "KH",
-    "name": "Cambodia",
-    "capital": "Phnom Penh"
+    "country": "Cambodia",
+    "capital": "Phnom Penh",
+    "name": "Phnom Penh, Cambodia, KH"
   },
   {
     "code": "CM",
-    "name": "Cameroon",
-    "capital": "Yaoundé"
+    "country": "Cameroon",
+    "capital": "Yaoundé",
+    "name": "Yaoundé, Cameroon, CM"
   },
   {
     "code": "CA",
-    "name": "Canada",
-    "capital": "Ottawa"
+    "country": "Canada",
+    "capital": "Ottawa",
+    "name": "Ottawa, Canada, CA"
   },
   {
     "code": "CV",
-    "name": "Cape Verde",
-    "capital": "Praia"
+    "country": "Cape Verde",
+    "capital": "Praia",
+    "name": "Praia, Cape Verde, CV"
   },
   {
     "code": "KY",
-    "name": "Cayman Islands",
-    "capital": "George Town"
+    "country": "Cayman Islands",
+    "capital": "George Town",
+    "name": "George Town, Cayman Islands, KY"
   },
   {
     "code": "CF",
-    "name": "Central African Republic",
-    "capital": "Bangui"
+    "country": "Central African Republic",
+    "capital": "Bangui",
+    "name": "Bangui, Central African Republic, CF"
   },
   {
     "code": "TD",
-    "name": "Chad",
-    "capital": "N'Djamena"
+    "country": "Chad",
+    "capital": "N'Djamena",
+    "name": "N'Djamena, Chad, TD"
   },
   {
     "code": "CL",
-    "name": "Chile",
-    "capital": "Santiago"
+    "country": "Chile",
+    "capital": "Santiago",
+    "name": "Santiago, Chile, CL"
   },
   {
     "code": "CN",
-    "name": "China",
-    "capital": "Beijing"
+    "country": "China",
+    "capital": "Beijing",
+    "name": "Beijing, China, CN"
   },
   {
     "code": "CX",
-    "name": "Christmas Island",
-    "capital": "Flying Fish Cove"
+    "country": "Christmas Island",
+    "capital": "Flying Fish Cove",
+    "name": "Flying Fish Cove, Christmas Island, CX"
   },
   {
     "code": "CC",
-    "name": "Cocos (Keeling) Islands",
-    "capital": "West Island"
+    "country": "Cocos (Keeling) Islands",
+    "capital": "West Island",
+    "name": "West Island, Cocos (Keeling) Islands, CC"
   },
   {
     "code": "CO",
-    "name": "Colombia",
-    "capital": "Bogotá"
+    "country": "Colombia",
+    "capital": "Bogotá",
+    "name": "Bogotá, Colombia, CO"
   },
   {
     "code": "KM",
-    "name": "Comoros",
-    "capital": "Moroni"
+    "country": "Comoros",
+    "capital": "Moroni",
+    "name": "Moroni, Comoros, KM"
   },
   {
     "code": "CG",
-    "name": "Republic of the Congo",
-    "capital": "Brazzaville"
+    "country": "Republic of the Congo",
+    "capital": "Brazzaville",
+    "name": "Brazzaville, Republic of the Congo, CG"
   },
   {
     "code": "CD",
-    "name": "Democratic Republic of the Congo",
-    "capital": "Kinshasa"
+    "country": "Democratic Republic of the Congo",
+    "capital": "Kinshasa",
+    "name": "Kinshasa, Democratic Republic of the Congo, CD"
   },
   {
     "code": "CK",
-    "name": "Cook Islands",
-    "capital": "Avarua"
+    "country": "Cook Islands",
+    "capital": "Avarua",
+    "name": "Avarua, Cook Islands, CK"
   },
   {
     "code": "CR",
-    "name": "Costa Rica",
-    "capital": "San José"
+    "country": "Costa Rica",
+    "capital": "San José",
+    "name": "San José, Costa Rica, CR"
   },
   {
     "code": "HR",
-    "name": "Croatia",
-    "capital": "Zagreb"
+    "country": "Croatia",
+    "capital": "Zagreb",
+    "name": "Zagreb, Croatia, HR"
   },
   {
     "code": "CU",
-    "name": "Cuba",
-    "capital": "Havana"
+    "country": "Cuba",
+    "capital": "Havana",
+    "name": "Havana, Cuba, CU"
   },
   {
     "code": "CW",
-    "name": "Curaçao",
-    "capital": "Willemstad"
+    "country": "Curaçao",
+    "capital": "Willemstad",
+    "name": "Willemstad, Curaçao, CW"
   },
   {
     "code": "CY",
-    "name": "Cyprus",
-    "capital": "Nicosia"
+    "country": "Cyprus",
+    "capital": "Nicosia",
+    "name": "Nicosia, Cyprus, CY"
   },
   {
     "code": "CZ",
-    "name": "Czech Republic",
-    "capital": "Prague"
+    "country": "Czech Republic",
+    "capital": "Prague",
+    "name": "Prague, Czech Republic, CZ"
   },
   {
     "code": "DK",
-    "name": "Denmark",
-    "capital": "Copenhagen"
+    "country": "Denmark",
+    "capital": "Copenhagen",
+    "name": "Copenhagen, Denmark, DK"
   },
   {
     "code": "DJ",
-    "name": "Djibouti",
-    "capital": "Djibouti"
+    "country": "Djibouti",
+    "capital": "Djibouti",
+    "name": "Djibouti, Djibouti, DJ"
   },
   {
     "code": "DM",
-    "name": "Dominica",
-    "capital": "Roseau"
+    "country": "Dominica",
+    "capital": "Roseau",
+    "name": "Roseau, Dominica, DM"
   },
   {
     "code": "DO",
-    "name": "Dominican Republic",
-    "capital": "Santo Domingo"
+    "country": "Dominican Republic",
+    "capital": "Santo Domingo",
+    "name": "Santo Domingo, Dominican Republic, DO"
   },
   {
     "code": "EC",
-    "name": "Ecuador",
-    "capital": "Quito"
+    "country": "Ecuador",
+    "capital": "Quito",
+    "name": "Quito, Ecuador, EC"
   },
   {
     "code": "EG",
-    "name": "Egypt",
-    "capital": "Cairo"
+    "country": "Egypt",
+    "capital": "Cairo",
+    "name": "Cairo, Egypt, EG"
   },
   {
     "code": "SV",
-    "name": "El Salvador",
-    "capital": "San Salvador"
+    "country": "El Salvador",
+    "capital": "San Salvador",
+    "name": "San Salvador, El Salvador, SV"
   },
   {
     "code": "GQ",
-    "name": "Equatorial Guinea",
-    "capital": "Malabo"
+    "country": "Equatorial Guinea",
+    "capital": "Malabo",
+    "name": "Malabo, Equatorial Guinea, GQ"
   },
   {
     "code": "ER",
-    "name": "Eritrea",
-    "capital": "Asmara"
+    "country": "Eritrea",
+    "capital": "Asmara",
+    "name": "Asmara, Eritrea, ER"
   },
   {
     "code": "EE",
-    "name": "Estonia",
-    "capital": "Tallinn"
+    "country": "Estonia",
+    "capital": "Tallinn",
+    "name": "Tallinn, Estonia, EE"
   },
   {
     "code": "ET",
-    "name": "Ethiopia",
-    "capital": "Addis Ababa"
+    "country": "Ethiopia",
+    "capital": "Addis Ababa",
+    "name": "Addis Ababa, Ethiopia, ET"
   },
   {
     "code": "FK",
-    "name": "Falkland Islands",
-    "capital": "Stanley"
+    "country": "Falkland Islands",
+    "capital": "Stanley",
+    "name": "Stanley, Falkland Islands, FK"
   },
   {
     "code": "FO",
-    "name": "Faroe Islands",
-    "capital": "Tórshavn"
+    "country": "Faroe Islands",
+    "capital": "Tórshavn",
+    "name": "Tórshavn, Faroe Islands, FO"
   },
   {
     "code": "FJ",
-    "name": "Fiji",
-    "capital": "Suva"
+    "country": "Fiji",
+    "capital": "Suva",
+    "name": "Suva, Fiji, FJ"
   },
   {
     "code": "FI",
-    "name": "Finland",
-    "capital": "Helsinki"
+    "country": "Finland",
+    "capital": "Helsinki",
+    "name": "Helsinki, Finland, FI"
   },
   {
     "code": "FR",
-    "name": "France",
-    "capital": "Paris"
+    "country": "France",
+    "capital": "Paris",
+    "name": "Paris, France, FR"
   },
   {
     "code": "GF",
-    "name": "French Guiana",
-    "capital": "Cayenne"
+    "country": "French Guiana",
+    "capital": "Cayenne",
+    "name": "Cayenne, French Guiana, GF"
   },
   {
     "code": "PF",
-    "name": "French Polynesia",
-    "capital": "Papeetē"
-  },
-  {
-    "code": "TF",
-    "name": "French Southern and Antarctic Lands",
-    "capital": "Port-aux-Français"
+    "country": "French Polynesia",
+    "capital": "Papeetē",
+    "name": "Papeetē, French Polynesia, PF"
   },
   {
     "code": "GA",
-    "name": "Gabon",
-    "capital": "Libreville"
+    "country": "Gabon",
+    "capital": "Libreville",
+    "name": "Libreville, Gabon, GA"
   },
   {
     "code": "GM",
-    "name": "The Gambia",
-    "capital": "Banjul"
+    "country": "The Gambia",
+    "capital": "Banjul",
+    "name": "Banjul, The Gambia, GM"
   },
   {
     "code": "GE",
-    "name": "Georgia",
-    "capital": "Tbilisi"
+    "country": "Georgia",
+    "capital": "Tbilisi",
+    "name": "Tbilisi, Georgia, GE"
   },
   {
     "code": "DE",
-    "name": "Germany",
-    "capital": "Berlin"
+    "country": "Germany",
+    "capital": "Berlin",
+    "name": "Berlin, Germany, DE"
   },
   {
     "code": "GH",
-    "name": "Ghana",
-    "capital": "Accra"
+    "country": "Ghana",
+    "capital": "Accra",
+    "name": "Accra, Ghana, GH"
   },
   {
     "code": "GI",
-    "name": "Gibraltar",
-    "capital": "Gibraltar"
+    "country": "Gibraltar",
+    "capital": "Gibraltar",
+    "name": "Gibraltar, Gibraltar, GI"
   },
   {
     "code": "GR",
-    "name": "Greece",
-    "capital": "Athens"
+    "country": "Greece",
+    "capital": "Athens",
+    "name": "Athens, Greece, GR"
   },
   {
     "code": "GL",
-    "name": "Greenland",
-    "capital": "Nuuk"
+    "country": "Greenland",
+    "capital": "Nuuk",
+    "name": "Nuuk, Greenland, GL"
   },
   {
     "code": "GD",
-    "name": "Grenada",
-    "capital": "St. George's"
+    "country": "Grenada",
+    "capital": "St. George's",
+    "name": "St. George's, Grenada, GD"
   },
   {
     "code": "GP",
-    "name": "Guadeloupe",
-    "capital": "Basse-Terre"
+    "country": "Guadeloupe",
+    "capital": "Basse-Terre",
+    "name": "Basse-Terre, Guadeloupe, GP"
   },
   {
     "code": "GU",
-    "name": "Guam",
-    "capital": "Hagåtña"
+    "country": "Guam",
+    "capital": "Hagåtña",
+    "name": "Hagåtña, Guam, GU"
   },
   {
     "code": "GT",
-    "name": "Guatemala",
-    "capital": "Guatemala City"
+    "country": "Guatemala",
+    "capital": "Guatemala City",
+    "name": "Guatemala City, Guatemala, GT"
   },
   {
     "code": "GG",
-    "name": "Guernsey",
-    "capital": "St. Peter Port"
+    "country": "Guernsey",
+    "capital": "St. Peter Port",
+    "name": "St. Peter Port, Guernsey, GG"
   },
   {
     "code": "GN",
-    "name": "Guinea",
-    "capital": "Conakry"
+    "country": "Guinea",
+    "capital": "Conakry",
+    "name": "Conakry, Guinea, GN"
   },
   {
     "code": "GW",
-    "name": "Guinea-Bissau",
-    "capital": "Bissau"
+    "country": "Guinea-Bissau",
+    "capital": "Bissau",
+    "name": "Bissau, Guinea-Bissau, GW"
   },
   {
     "code": "GY",
-    "name": "Guyana",
-    "capital": "Georgetown"
+    "country": "Guyana",
+    "capital": "Georgetown",
+    "name": "Georgetown, Guyana, GY"
   },
   {
     "code": "HT",
-    "name": "Haiti",
-    "capital": "Port-au-Prince"
+    "country": "Haiti",
+    "capital": "Port-au-Prince",
+    "name": "Port-au-Prince, Haiti, HT"
   },
   {
     "code": "HN",
-    "name": "Honduras",
-    "capital": "Tegucigalpa"
+    "country": "Honduras",
+    "capital": "Tegucigalpa",
+    "name": "Tegucigalpa, Honduras, HN"
   },
   {
     "code": "HK",
-    "name": "Hong Kong",
-    "capital": "City of Victoria"
+    "country": "Hong Kong",
+    "capital": "City of Victoria",
+    "name": "City of Victoria, Hong Kong, HK"
   },
   {
     "code": "HU",
-    "name": "Hungary",
-    "capital": "Budapest"
+    "country": "Hungary",
+    "capital": "Budapest",
+    "name": "Budapest, Hungary, HU"
   },
   {
     "code": "IS",
-    "name": "Iceland",
-    "capital": "Reykjavik"
+    "country": "Iceland",
+    "capital": "Reykjavik",
+    "name": "Reykjavik, Iceland, IS"
   },
   {
     "code": "IN",
-    "name": "India",
-    "capital": "New Delhi"
+    "country": "India",
+    "capital": "New Delhi",
+    "name": "New Delhi, India, IN"
   },
   {
     "code": "ID",
-    "name": "Indonesia",
-    "capital": "Jakarta"
+    "country": "Indonesia",
+    "capital": "Jakarta",
+    "name": "Jakarta, Indonesia, ID"
   },
   {
     "code": "CI",
-    "name": "Ivory Coast",
-    "capital": "Yamoussoukro"
+    "country": "Ivory Coast",
+    "capital": "Yamoussoukro",
+    "name": "Yamoussoukro, Ivory Coast, CI"
   },
   {
     "code": "IR",
-    "name": "Iran",
-    "capital": "Tehran"
+    "country": "Iran",
+    "capital": "Tehran",
+    "name": "Tehran, Iran, IR"
   },
   {
     "code": "IQ",
-    "name": "Iraq",
-    "capital": "Baghdad"
+    "country": "Iraq",
+    "capital": "Baghdad",
+    "name": "Baghdad, Iraq, IQ"
   },
   {
     "code": "IE",
-    "name": "Republic of Ireland",
-    "capital": "Dublin"
+    "country": "Republic of Ireland",
+    "capital": "Dublin",
+    "name": "Dublin, Republic of Ireland, IE"
   },
   {
     "code": "IM",
-    "name": "Isle of Man",
-    "capital": "Douglas"
+    "country": "Isle of Man",
+    "capital": "Douglas",
+    "name": "Douglas, Isle of Man, IM"
   },
   {
     "code": "IL",
-    "name": "Israel",
-    "capital": "Jerusalem"
+    "country": "Israel",
+    "capital": "Jerusalem",
+    "name": "Jerusalem, Israel, IL"
   },
   {
     "code": "IT",
-    "name": "Italy",
-    "capital": "Rome"
+    "country": "Italy",
+    "capital": "Rome",
+    "name": "Rome, Italy, IT"
   },
   {
     "code": "JM",
-    "name": "Jamaica",
-    "capital": "Kingston"
+    "country": "Jamaica",
+    "capital": "Kingston",
+    "name": "Kingston, Jamaica, JM"
   },
   {
     "code": "JP",
-    "name": "Japan",
-    "capital": "Tokyo"
+    "country": "Japan",
+    "capital": "Tokyo",
+    "name": "Tokyo, Japan, JP"
   },
   {
     "code": "JE",
-    "name": "Jersey",
-    "capital": "Saint Helier"
+    "country": "Jersey",
+    "capital": "Saint Helier",
+    "name": "Saint Helier, Jersey, JE"
   },
   {
     "code": "JO",
-    "name": "Jordan",
-    "capital": "Amman"
+    "country": "Jordan",
+    "capital": "Amman",
+    "name": "Amman, Jordan, JO"
   },
   {
     "code": "KZ",
-    "name": "Kazakhstan",
-    "capital": "Astana"
+    "country": "Kazakhstan",
+    "capital": "Astana",
+    "name": "Astana, Kazakhstan, KZ"
   },
   {
     "code": "KE",
-    "name": "Kenya",
-    "capital": "Nairobi"
+    "country": "Kenya",
+    "capital": "Nairobi",
+    "name": "Nairobi, Kenya, KE"
   },
   {
     "code": "KI",
-    "name": "Kiribati",
-    "capital": "South Tarawa"
+    "country": "Kiribati",
+    "capital": "South Tarawa",
+    "name": "South Tarawa, Kiribati, KI"
   },
   {
     "code": "KW",
-    "name": "Kuwait",
-    "capital": "Kuwait City"
+    "country": "Kuwait",
+    "capital": "Kuwait City",
+    "name": "Kuwait City, Kuwait, KW"
   },
   {
     "code": "KG",
-    "name": "Kyrgyzstan",
-    "capital": "Bishkek"
+    "country": "Kyrgyzstan",
+    "capital": "Bishkek",
+    "name": "Bishkek, Kyrgyzstan, KG"
   },
   {
     "code": "LA",
-    "name": "Laos",
-    "capital": "Vientiane"
+    "country": "Laos",
+    "capital": "Vientiane",
+    "name": "Vientiane, Laos, LA"
   },
   {
     "code": "LV",
-    "name": "Latvia",
-    "capital": "Riga"
+    "country": "Latvia",
+    "capital": "Riga",
+    "name": "Riga, Latvia, LV"
   },
   {
     "code": "LB",
-    "name": "Lebanon",
-    "capital": "Beirut"
+    "country": "Lebanon",
+    "capital": "Beirut",
+    "name": "Beirut, Lebanon, LB"
   },
   {
     "code": "LS",
-    "name": "Lesotho",
-    "capital": "Maseru"
+    "country": "Lesotho",
+    "capital": "Maseru",
+    "name": "Maseru, Lesotho, LS"
   },
   {
     "code": "LR",
-    "name": "Liberia",
-    "capital": "Monrovia"
+    "country": "Liberia",
+    "capital": "Monrovia",
+    "name": "Monrovia, Liberia, LR"
   },
   {
     "code": "LY",
-    "name": "Libya",
-    "capital": "Tripoli"
+    "country": "Libya",
+    "capital": "Tripoli",
+    "name": "Tripoli, Libya, LY"
   },
   {
     "code": "LI",
-    "name": "Liechtenstein",
-    "capital": "Vaduz"
+    "country": "Liechtenstein",
+    "capital": "Vaduz",
+    "name": "Vaduz, Liechtenstein, LI"
   },
   {
     "code": "LT",
-    "name": "Lithuania",
-    "capital": "Vilnius"
+    "country": "Lithuania",
+    "capital": "Vilnius",
+    "name": "Vilnius, Lithuania, LT"
   },
   {
     "code": "LU",
-    "name": "Luxembourg",
-    "capital": "Luxembourg"
+    "country": "Luxembourg",
+    "capital": "Luxembourg",
+    "name": "Luxembourg, Luxembourg, LU"
   },
   {
     "code": "MK",
-    "name": "Republic of Macedonia",
-    "capital": "Skopje"
+    "country": "Republic of Macedonia",
+    "capital": "Skopje",
+    "name": "Skopje, Republic of Macedonia, MK"
   },
   {
     "code": "MG",
-    "name": "Madagascar",
-    "capital": "Antananarivo"
+    "country": "Madagascar",
+    "capital": "Antananarivo",
+    "name": "Antananarivo, Madagascar, MG"
   },
   {
     "code": "MW",
-    "name": "Malawi",
-    "capital": "Lilongwe"
+    "country": "Malawi",
+    "capital": "Lilongwe",
+    "name": "Lilongwe, Malawi, MW"
   },
   {
     "code": "MY",
-    "name": "Malaysia",
-    "capital": "Kuala Lumpur"
+    "country": "Malaysia",
+    "capital": "Kuala Lumpur",
+    "name": "Kuala Lumpur, Malaysia, MY"
   },
   {
     "code": "MV",
-    "name": "Maldives",
-    "capital": "Malé"
+    "country": "Maldives",
+    "capital": "Malé",
+    "name": "Malé, Maldives, MV"
   },
   {
     "code": "ML",
-    "name": "Mali",
-    "capital": "Bamako"
+    "country": "Mali",
+    "capital": "Bamako",
+    "name": "Bamako, Mali, ML"
   },
   {
     "code": "MT",
-    "name": "Malta",
-    "capital": "Valletta"
+    "country": "Malta",
+    "capital": "Valletta",
+    "name": "Valletta, Malta, MT"
   },
   {
     "code": "MH",
-    "name": "Marshall Islands",
-    "capital": "Majuro"
+    "country": "Marshall Islands",
+    "capital": "Majuro",
+    "name": "Majuro, Marshall Islands, MH"
   },
   {
     "code": "MQ",
-    "name": "Martinique",
-    "capital": "Fort-de-France"
+    "country": "Martinique",
+    "capital": "Fort-de-France",
+    "name": "Fort-de-France, Martinique, MQ"
   },
   {
     "code": "MR",
-    "name": "Mauritania",
-    "capital": "Nouakchott"
+    "country": "Mauritania",
+    "capital": "Nouakchott",
+    "name": "Nouakchott, Mauritania, MR"
   },
   {
     "code": "MU",
-    "name": "Mauritius",
-    "capital": "Port Louis"
+    "country": "Mauritius",
+    "capital": "Port Louis",
+    "name": "Port Louis, Mauritius, MU"
   },
   {
     "code": "YT",
-    "name": "Mayotte",
-    "capital": "Mamoudzou"
+    "country": "Mayotte",
+    "capital": "Mamoudzou",
+    "name": "Mamoudzou, Mayotte, YT"
   },
   {
     "code": "MX",
-    "name": "Mexico",
-    "capital": "Mexico City"
+    "country": "Mexico",
+    "capital": "Mexico City",
+    "name": "Mexico City, Mexico, MX"
   },
   {
     "code": "FM",
-    "name": "Federated States of Micronesia",
-    "capital": "Palikir"
+    "country": "Federated States of Micronesia",
+    "capital": "Palikir",
+    "name": "Palikir, Federated States of Micronesia, FM"
   },
   {
     "code": "MD",
-    "name": "Moldova",
-    "capital": "Chișinău"
+    "country": "Moldova",
+    "capital": "Chișinău",
+    "name": "Chișinău, Moldova, MD"
   },
   {
     "code": "MC",
-    "name": "Monaco",
-    "capital": "Monaco"
+    "country": "Monaco",
+    "capital": "Monaco",
+    "name": "Monaco, Monaco, MC"
   },
   {
     "code": "MN",
-    "name": "Mongolia",
-    "capital": "Ulan Bator"
+    "country": "Mongolia",
+    "capital": "Ulan Bator",
+    "name": "Ulan Bator, Mongolia, MN"
   },
   {
     "code": "ME",
-    "name": "Montenegro",
-    "capital": "Podgorica"
+    "country": "Montenegro",
+    "capital": "Podgorica",
+    "name": "Podgorica, Montenegro, ME"
   },
   {
     "code": "MS",
-    "name": "Montserrat",
-    "capital": "Plymouth"
+    "country": "Montserrat",
+    "capital": "Plymouth",
+    "name": "Plymouth, Montserrat, MS"
   },
   {
     "code": "MA",
-    "name": "Morocco",
-    "capital": "Rabat"
+    "country": "Morocco",
+    "capital": "Rabat",
+    "name": "Rabat, Morocco, MA"
   },
   {
     "code": "MZ",
-    "name": "Mozambique",
-    "capital": "Maputo"
+    "country": "Mozambique",
+    "capital": "Maputo",
+    "name": "Maputo, Mozambique, MZ"
   },
   {
     "code": "MM",
-    "name": "Myanmar",
-    "capital": "Naypyidaw"
+    "country": "Myanmar",
+    "capital": "Naypyidaw",
+    "name": "Naypyidaw, Myanmar, MM"
   },
   {
     "code": "NA",
-    "name": "Namibia",
-    "capital": "Windhoek"
+    "country": "Namibia",
+    "capital": "Windhoek",
+    "name": "Windhoek, Namibia, NA"
   },
   {
     "code": "NR",
-    "name": "Nauru",
-    "capital": "Yaren"
+    "country": "Nauru",
+    "capital": "Yaren",
+    "name": "Yaren, Nauru, NR"
   },
   {
     "code": "NP",
-    "name": "Nepal",
-    "capital": "Kathmandu"
+    "country": "Nepal",
+    "capital": "Kathmandu",
+    "name": "Kathmandu, Nepal, NP"
   },
   {
     "code": "NL",
-    "name": "Netherlands",
-    "capital": "Amsterdam"
+    "country": "Netherlands",
+    "capital": "Amsterdam",
+    "name": "Amsterdam, Netherlands, NL"
   },
   {
     "code": "NC",
-    "name": "New Caledonia",
-    "capital": "Nouméa"
+    "country": "New Caledonia",
+    "capital": "Nouméa",
+    "name": "Nouméa, New Caledonia, NC"
   },
   {
     "code": "NZ",
-    "name": "New Zealand",
-    "capital": "Wellington"
+    "country": "New Zealand",
+    "capital": "Wellington",
+    "name": "Wellington, New Zealand, NZ"
   },
   {
     "code": "NI",
-    "name": "Nicaragua",
-    "capital": "Managua"
+    "country": "Nicaragua",
+    "capital": "Managua",
+    "name": "Managua, Nicaragua, NI"
   },
   {
     "code": "NE",
-    "name": "Niger",
-    "capital": "Niamey"
+    "country": "Niger",
+    "capital": "Niamey",
+    "name": "Niamey, Niger, NE"
   },
   {
     "code": "NG",
-    "name": "Nigeria",
-    "capital": "Abuja"
+    "country": "Nigeria",
+    "capital": "Abuja",
+    "name": "Abuja, Nigeria, NG"
   },
   {
     "code": "NU",
-    "name": "Niue",
-    "capital": "Alofi"
+    "country": "Niue",
+    "capital": "Alofi",
+    "name": "Alofi, Niue, NU"
   },
   {
     "code": "NF",
-    "name": "Norfolk Island",
-    "capital": "Kingston"
+    "country": "Norfolk Island",
+    "capital": "Kingston",
+    "name": "Kingston, Norfolk Island, NF"
   },
   {
     "code": "KP",
-    "name": "North Korea",
-    "capital": "Pyongyang"
+    "country": "North Korea",
+    "capital": "Pyongyang",
+    "name": "Pyongyang, North Korea, KP"
   },
   {
     "code": "MP",
-    "name": "Northern Mariana Islands",
-    "capital": "Saipan"
+    "country": "Northern Mariana Islands",
+    "capital": "Saipan",
+    "name": "Saipan, Northern Mariana Islands, MP"
   },
   {
     "code": "NO",
-    "name": "Norway",
-    "capital": "Oslo"
+    "country": "Norway",
+    "capital": "Oslo",
+    "name": "Oslo, Norway, NO"
   },
   {
     "code": "OM",
-    "name": "Oman",
-    "capital": "Muscat"
+    "country": "Oman",
+    "capital": "Muscat",
+    "name": "Muscat, Oman, OM"
   },
   {
     "code": "PK",
-    "name": "Pakistan",
-    "capital": "Islamabad"
+    "country": "Pakistan",
+    "capital": "Islamabad",
+    "name": "Islamabad, Pakistan, PK"
   },
   {
     "code": "PW",
-    "name": "Palau",
-    "capital": "Ngerulmud"
+    "country": "Palau",
+    "capital": "Ngerulmud",
+    "name": "Ngerulmud, Palau, PW"
   },
   {
     "code": "PS",
-    "name": "Palestine",
-    "capital": "Ramallah"
+    "country": "Palestine",
+    "capital": "Ramallah",
+    "name": "Ramallah, Palestine, PS"
   },
   {
     "code": "PA",
-    "name": "Panama",
-    "capital": "Panama City"
+    "country": "Panama",
+    "capital": "Panama City",
+    "name": "Panama City, Panama, PA"
   },
   {
     "code": "PG",
-    "name": "Papua New Guinea",
-    "capital": "Port Moresby"
+    "country": "Papua New Guinea",
+    "capital": "Port Moresby",
+    "name": "Port Moresby, Papua New Guinea, PG"
   },
   {
     "code": "PY",
-    "name": "Paraguay",
-    "capital": "Asunción"
+    "country": "Paraguay",
+    "capital": "Asunción",
+    "name": "Asunción, Paraguay, PY"
   },
   {
     "code": "PE",
-    "name": "Peru",
-    "capital": "Lima"
+    "country": "Peru",
+    "capital": "Lima",
+    "name": "Lima, Peru, PE"
   },
   {
     "code": "PH",
-    "name": "Philippines",
-    "capital": "Manila"
+    "country": "Philippines",
+    "capital": "Manila",
+    "name": "Manila, Philippines, PH"
   },
   {
     "code": "PN",
-    "name": "Pitcairn Islands",
-    "capital": "Adamstown"
+    "country": "Pitcairn Islands",
+    "capital": "Adamstown",
+    "name": "Adamstown, Pitcairn Islands, PN"
   },
   {
     "code": "PL",
-    "name": "Poland",
-    "capital": "Warsaw"
+    "country": "Poland",
+    "capital": "Warsaw",
+    "name": "Warsaw, Poland, PL"
   },
   {
     "code": "PT",
-    "name": "Portugal",
-    "capital": "Lisbon"
+    "country": "Portugal",
+    "capital": "Lisbon",
+    "name": "Lisbon, Portugal, PT"
   },
   {
     "code": "PR",
-    "name": "Puerto Rico",
-    "capital": "San Juan"
+    "country": "Puerto Rico",
+    "capital": "San Juan",
+    "name": "San Juan, Puerto Rico, PR"
   },
   {
     "code": "QA",
-    "name": "Qatar",
-    "capital": "Doha"
+    "country": "Qatar",
+    "capital": "Doha",
+    "name": "Doha, Qatar, QA"
   },
   {
     "code": "XK",
-    "name": "Republic of Kosovo",
-    "capital": "Pristina"
+    "country": "Republic of Kosovo",
+    "capital": "Pristina",
+    "name": "Pristina, Republic of Kosovo, XK"
   },
   {
     "code": "RE",
-    "name": "Réunion",
-    "capital": "Saint-Denis"
+    "country": "Réunion",
+    "capital": "Saint-Denis",
+    "name": "Saint-Denis, Réunion, RE"
   },
   {
     "code": "RO",
-    "name": "Romania",
-    "capital": "Bucharest"
+    "country": "Romania",
+    "capital": "Bucharest",
+    "name": "Bucharest, Romania, RO"
   },
   {
     "code": "RU",
-    "name": "Russia",
-    "capital": "Moscow"
+    "country": "Russia",
+    "capital": "Moscow",
+    "name": "Moscow, Russia, RU"
   },
   {
     "code": "RW",
-    "name": "Rwanda",
-    "capital": "Kigali"
+    "country": "Rwanda",
+    "capital": "Kigali",
+    "name": "Kigali, Rwanda, RW"
   },
   {
     "code": "BL",
-    "name": "Saint Barthélemy",
-    "capital": "Gustavia"
+    "country": "Saint Barthélemy",
+    "capital": "Gustavia",
+    "name": "Gustavia, Saint Barthélemy, BL"
   },
   {
     "code": "SH",
-    "name": "Saint Helena",
-    "capital": "Jamestown"
+    "country": "Saint Helena",
+    "capital": "Jamestown",
+    "name": "Jamestown, Saint Helena, SH"
   },
   {
     "code": "KN",
-    "name": "Saint Kitts and Nevis",
-    "capital": "Basseterre"
+    "country": "Saint Kitts and Nevis",
+    "capital": "Basseterre",
+    "name": "Basseterre, Saint Kitts and Nevis, KN"
   },
   {
     "code": "LC",
-    "name": "Saint Lucia",
-    "capital": "Castries"
+    "country": "Saint Lucia",
+    "capital": "Castries",
+    "name": "Castries, Saint Lucia, LC"
   },
   {
     "code": "MF",
-    "name": "Saint Martin",
-    "capital": "Marigot"
+    "country": "Saint Martin",
+    "capital": "Marigot",
+    "name": "Marigot, Saint Martin, MF"
   },
   {
     "code": "PM",
-    "name": "Saint Pierre and Miquelon",
-    "capital": "Saint-Pierre"
+    "country": "Saint Pierre and Miquelon",
+    "capital": "Saint-Pierre",
+    "name": "Saint-Pierre, Saint Pierre and Miquelon, PM"
   },
   {
     "code": "VC",
-    "name": "Saint Vincent and the Grenadines",
-    "capital": "Kingstown"
+    "country": "Saint Vincent and the Grenadines",
+    "capital": "Kingstown",
+    "name": "Kingstown, Saint Vincent and the Grenadines, VC"
   },
   {
     "code": "WS",
-    "name": "Samoa",
-    "capital": "Apia"
+    "country": "Samoa",
+    "capital": "Apia",
+    "name": "Apia, Samoa, WS"
   },
   {
     "code": "SM",
-    "name": "San Marino",
-    "capital": "City of San Marino"
+    "country": "San Marino",
+    "capital": "City of San Marino",
+    "name": "City of San Marino, San Marino, SM"
   },
   {
     "code": "ST",
-    "name": "São Tomé and Príncipe",
-    "capital": "São Tomé"
+    "country": "São Tomé and Príncipe",
+    "capital": "São Tomé",
+    "name": "São Tomé, São Tomé and Príncipe, ST"
   },
   {
     "code": "SA",
-    "name": "Saudi Arabia",
-    "capital": "Riyadh"
+    "country": "Saudi Arabia",
+    "capital": "Riyadh",
+    "name": "Riyadh, Saudi Arabia, SA"
   },
   {
     "code": "SN",
-    "name": "Senegal",
-    "capital": "Dakar"
+    "country": "Senegal",
+    "capital": "Dakar",
+    "name": "Dakar, Senegal, SN"
   },
   {
     "code": "RS",
-    "name": "Serbia",
-    "capital": "Belgrade"
+    "country": "Serbia",
+    "capital": "Belgrade",
+    "name": "Belgrade, Serbia, RS"
   },
   {
     "code": "SC",
-    "name": "Seychelles",
-    "capital": "Victoria"
+    "country": "Seychelles",
+    "capital": "Victoria",
+    "name": "Victoria, Seychelles, SC"
   },
   {
     "code": "SL",
-    "name": "Sierra Leone",
-    "capital": "Freetown"
+    "country": "Sierra Leone",
+    "capital": "Freetown",
+    "name": "Freetown, Sierra Leone, SL"
   },
   {
     "code": "SG",
-    "name": "Singapore",
-    "capital": "Singapore"
+    "country": "Singapore",
+    "capital": "Singapore",
+    "name": "Singapore, Singapore, SG"
   },
   {
     "code": "SX",
-    "name": "Sint Maarten",
-    "capital": "Philipsburg"
+    "country": "Sint Maarten",
+    "capital": "Philipsburg",
+    "name": "Philipsburg, Sint Maarten, SX"
   },
   {
     "code": "SK",
-    "name": "Slovakia",
-    "capital": "Bratislava"
+    "country": "Slovakia",
+    "capital": "Bratislava",
+    "name": "Bratislava, Slovakia, SK"
   },
   {
     "code": "SI",
-    "name": "Slovenia",
-    "capital": "Ljubljana"
+    "country": "Slovenia",
+    "capital": "Ljubljana",
+    "name": "Ljubljana, Slovenia, SI"
   },
   {
     "code": "SB",
-    "name": "Solomon Islands",
-    "capital": "Honiara"
+    "country": "Solomon Islands",
+    "capital": "Honiara",
+    "name": "Honiara, Solomon Islands, SB"
   },
   {
     "code": "SO",
-    "name": "Somalia",
-    "capital": "Mogadishu"
+    "country": "Somalia",
+    "capital": "Mogadishu",
+    "name": "Mogadishu, Somalia, SO"
   },
   {
     "code": "ZA",
-    "name": "South Africa",
-    "capital": "Pretoria"
+    "country": "South Africa",
+    "capital": "Pretoria",
+    "name": "Pretoria, South Africa, ZA"
   },
   {
     "code": "GS",
-    "name": "South Georgia",
-    "capital": "King Edward Point"
+    "country": "South Georgia",
+    "capital": "King Edward Point",
+    "name": "King Edward Point, South Georgia, GS"
   },
   {
     "code": "KR",
-    "name": "South Korea",
-    "capital": "Seoul"
+    "country": "South Korea",
+    "capital": "Seoul",
+    "name": "Seoul, South Korea, KR"
   },
   {
     "code": "SS",
-    "name": "South Sudan",
-    "capital": "Juba"
+    "country": "South Sudan",
+    "capital": "Juba",
+    "name": "Juba, South Sudan, SS"
   },
   {
     "code": "ES",
-    "name": "Spain",
-    "capital": "Madrid"
+    "country": "Spain",
+    "capital": "Madrid",
+    "name": "Madrid, Spain, ES"
   },
   {
     "code": "LK",
-    "name": "Sri Lanka",
-    "capital": "Colombo"
+    "country": "Sri Lanka",
+    "capital": "Colombo",
+    "name": "Colombo, Sri Lanka, LK"
   },
   {
     "code": "SD",
-    "name": "Sudan",
-    "capital": "Khartoum"
+    "country": "Sudan",
+    "capital": "Khartoum",
+    "name": "Khartoum, Sudan, SD"
   },
   {
     "code": "SR",
-    "name": "Suriname",
-    "capital": "Paramaribo"
+    "country": "Suriname",
+    "capital": "Paramaribo",
+    "name": "Paramaribo, Suriname, SR"
   },
   {
     "code": "SJ",
-    "name": "Svalbard and Jan Mayen",
-    "capital": "Longyearbyen"
+    "country": "Svalbard and Jan Mayen",
+    "capital": "Longyearbyen",
+    "name": "Longyearbyen, Svalbard and Jan Mayen, SJ"
   },
   {
     "code": "SZ",
-    "name": "Swaziland",
-    "capital": "Lobamba"
+    "country": "Swaziland",
+    "capital": "Lobamba",
+    "name": "Lobamba, Swaziland, SZ"
   },
   {
     "code": "SE",
-    "name": "Sweden",
-    "capital": "Stockholm"
+    "country": "Sweden",
+    "capital": "Stockholm",
+    "name": "Stockholm, Sweden, SE"
   },
   {
     "code": "CH",
-    "name": "Switzerland",
-    "capital": "Bern"
+    "country": "Switzerland",
+    "capital": "Bern",
+    "name": "Bern, Switzerland, CH"
   },
   {
     "code": "SY",
-    "name": "Syria",
-    "capital": "Damascus"
+    "country": "Syria",
+    "capital": "Damascus",
+    "name": "Damascus, Syria, SY"
   },
   {
     "code": "TW",
-    "name": "Taiwan",
-    "capital": "Taipei"
+    "country": "Taiwan",
+    "capital": "Taipei",
+    "name": "Taipei, Taiwan, TW"
   },
   {
     "code": "TJ",
-    "name": "Tajikistan",
-    "capital": "Dushanbe"
+    "country": "Tajikistan",
+    "capital": "Dushanbe",
+    "name": "Dushanbe, Tajikistan, TJ"
   },
   {
     "code": "TZ",
-    "name": "Tanzania",
-    "capital": "Dodoma"
+    "country": "Tanzania",
+    "capital": "Dodoma",
+    "name": "Dodoma, Tanzania, TZ"
   },
   {
     "code": "TH",
-    "name": "Thailand",
-    "capital": "Bangkok"
+    "country": "Thailand",
+    "capital": "Bangkok",
+    "name": "Bangkok, Thailand, TH"
   },
   {
     "code": "TL",
-    "name": "East Timor",
-    "capital": "Dili"
+    "country": "East Timor",
+    "capital": "Dili",
+    "name": "Dili, East Timor, TL"
   },
   {
     "code": "TG",
-    "name": "Togo",
-    "capital": "Lomé"
+    "country": "Togo",
+    "capital": "Lomé",
+    "name": "Lomé, Togo, TG"
   },
   {
     "code": "TK",
-    "name": "Tokelau",
-    "capital": "Fakaofo"
+    "country": "Tokelau",
+    "capital": "Fakaofo",
+    "name": "Fakaofo, Tokelau, TK"
   },
   {
     "code": "TO",
-    "name": "Tonga",
-    "capital": "Nuku'alofa"
+    "country": "Tonga",
+    "capital": "Nuku'alofa",
+    "name": "Nuku'alofa, Tonga, TO"
   },
   {
     "code": "TT",
-    "name": "Trinidad and Tobago",
-    "capital": "Port of Spain"
+    "country": "Trinidad and Tobago",
+    "capital": "Port of Spain",
+    "name": "Port of Spain, Trinidad and Tobago, TT"
   },
   {
     "code": "TN",
-    "name": "Tunisia",
-    "capital": "Tunis"
+    "country": "Tunisia",
+    "capital": "Tunis",
+    "name": "Tunis, Tunisia, TN"
   },
   {
     "code": "TR",
-    "name": "Turkey",
-    "capital": "Ankara"
+    "country": "Turkey",
+    "capital": "Ankara",
+    "name": "Ankara, Turkey, TR"
   },
   {
     "code": "TM",
-    "name": "Turkmenistan",
-    "capital": "Ashgabat"
+    "country": "Turkmenistan",
+    "capital": "Ashgabat",
+    "name": "Ashgabat, Turkmenistan, TM"
   },
   {
     "code": "TC",
-    "name": "Turks and Caicos Islands",
-    "capital": "Cockburn Town"
+    "country": "Turks and Caicos Islands",
+    "capital": "Cockburn Town",
+    "name": "Cockburn Town, Turks and Caicos Islands, TC"
   },
   {
     "code": "TV",
-    "name": "Tuvalu",
-    "capital": "Funafuti"
+    "country": "Tuvalu",
+    "capital": "Funafuti",
+    "name": "Funafuti, Tuvalu, TV"
   },
   {
     "code": "UG",
-    "name": "Uganda",
-    "capital": "Kampala"
+    "country": "Uganda",
+    "capital": "Kampala",
+    "name": "Kampala, Uganda, UG"
   },
   {
     "code": "UA",
-    "name": "Ukraine",
-    "capital": "Kiev"
+    "country": "Ukraine",
+    "capital": "Kiev",
+    "name": "Kiev, Ukraine, UA"
   },
   {
     "code": "AE",
-    "name": "United Arab Emirates",
-    "capital": "Abu Dhabi"
+    "country": "United Arab Emirates",
+    "capital": "Abu Dhabi",
+    "name": "Abu Dhabi, United Arab Emirates, AE"
   },
   {
     "code": "GB",
-    "name": "England",
-    "capital": "London"
+    "country": "England",
+    "capital": "London",
+    "name": "London, England, GB"
   },
   {
     "code": "US",
-    "name": "United States",
-    "capital": "Washington D.C."
+    "country": "United States",
+    "capital": "Washington D.C.",
+    "name": "Washington D.C., United States, US"
   },
   {
     "code": "UY",
-    "name": "Uruguay",
-    "capital": "Montevideo"
+    "country": "Uruguay",
+    "capital": "Montevideo",
+    "name": "Montevideo, Uruguay, UY"
   },
   {
     "code": "UZ",
-    "name": "Uzbekistan",
-    "capital": "Tashkent"
+    "country": "Uzbekistan",
+    "capital": "Tashkent",
+    "name": "Tashkent, Uzbekistan, UZ"
   },
   {
     "code": "VU",
-    "name": "Vanuatu",
-    "capital": "Port Vila"
+    "country": "Vanuatu",
+    "capital": "Port Vila",
+    "name": "Port Vila, Vanuatu, VU"
   },
   {
     "code": "VE",
-    "name": "Venezuela",
-    "capital": "Caracas"
+    "country": "Venezuela",
+    "capital": "Caracas",
+    "name": "Caracas, Venezuela, VE"
   },
   {
     "code": "VN",
-    "name": "Vietnam",
-    "capital": "Hanoi"
+    "country": "Vietnam",
+    "capital": "Hanoi",
+    "name": "Hanoi, Vietnam, VN"
   },
   {
     "code": "WF",
-    "name": "Wallis and Futuna",
-    "capital": "Mata-Utu"
+    "country": "Wallis and Futuna",
+    "capital": "Mata-Utu",
+    "name": "Mata-Utu, Wallis and Futuna, WF"
   },
   {
     "code": "EH",
-    "name": "Western Sahara",
-    "capital": "El Aaiún"
+    "country": "Western Sahara",
+    "capital": "El Aaiún",
+    "name": "El Aaiún, Western Sahara, EH"
   },
   {
     "code": "YE",
-    "name": "Yemen",
-    "capital": "Sana'a"
+    "country": "Yemen",
+    "capital": "Sana'a",
+    "name": "Sana'a, Yemen, YE"
   },
   {
     "code": "ZM",
-    "name": "Zambia",
-    "capital": "Lusaka"
+    "country": "Zambia",
+    "capital": "Lusaka",
+    "name": "Lusaka, Zambia, ZM"
   },
   {
     "code": "ZW",
-    "name": "Zimbabwe",
-    "capital": "Harare"
+    "country": "Zimbabwe",
+    "capital": "Harare",
+    "name": "Harare, Zimbabwe, ZW"
   },
   {
     "code": "AL",
-    "name": "Alabama",
-    "capital": "Montgomery"
+    "country": "Alabama",
+    "capital": "Montgomery",
+    "name": "Montgomery, Alabama, AL"
   },
   {
     "code": "AK",
-    "name": "Alaska",
-    "capital": "Juneau"
+    "country": "Alaska",
+    "capital": "Juneau",
+    "name": "Juneau, Alaska, AK"
   },
   {
     "code": "AZ",
-    "name": "Arizona",
-    "capital": "Phoenix"
+    "country": "Arizona",
+    "capital": "Phoenix",
+    "name": "Phoenix, Arizona, AZ"
   },
   {
     "code": "AR",
-    "name": "Arkansas",
-    "capital": "Little Rock"
+    "country": "Arkansas",
+    "capital": "Little Rock",
+    "name": "Little Rock, Arkansas, AR"
   },
   {
     "code": "CA",
-    "name": "California",
-    "capital": "Sacramento"
+    "country": "California",
+    "capital": "Sacramento",
+    "name": "Sacramento, California, CA"
   },
   {
     "code": "CO",
-    "name": "Colorado",
-    "capital": "Denver"
+    "country": "Colorado",
+    "capital": "Denver",
+    "name": "Denver, Colorado, CO"
   },
   {
     "code": "CT",
-    "name": "Connecticut",
-    "capital": "Hartford"
+    "country": "Connecticut",
+    "capital": "Hartford",
+    "name": "Hartford, Connecticut, CT"
   },
   {
     "code": "DE",
-    "name": "Delaware",
-    "capital": "Dover"
+    "country": "Delaware",
+    "capital": "Dover",
+    "name": "Dover, Delaware, DE"
   },
   {
     "code": "FL",
-    "name": "Florida",
-    "capital": "Tallahassee"
+    "country": "Florida",
+    "capital": "Tallahassee",
+    "name": "Tallahassee, Florida, FL"
   },
   {
     "code": "GA",
-    "name": "Georgia",
-    "capital": "Atlanta"
+    "country": "Georgia",
+    "capital": "Atlanta",
+    "name": "Atlanta, Georgia, GA"
   },
   {
     "code": "HI",
-    "name": "Hawaii",
-    "capital": "Honolulu"
+    "country": "Hawaii",
+    "capital": "Honolulu",
+    "name": "Honolulu, Hawaii, HI"
   },
   {
     "code": "ID",
-    "name": "Idaho",
-    "capital": "Boise"
+    "country": "Idaho",
+    "capital": "Boise",
+    "name": "Boise, Idaho, ID"
   },
   {
     "code": "IL",
-    "name": "Illinois",
-    "capital": "Springfield"
+    "country": "Illinois",
+    "capital": "Springfield",
+    "name": "Springfield, Illinois, IL"
   },
   {
     "code": "IN",
-    "name": "Indiana",
-    "capital": "Indianapolis"
+    "country": "Indiana",
+    "capital": "Indianapolis",
+    "name": "Indianapolis, Indiana, IN"
   },
   {
     "code": "IA",
-    "name": "Iowa",
-    "capital": "Des Moines"
+    "country": "Iowa",
+    "capital": "Des Moines",
+    "name": "Des Moines, Iowa, IA"
   },
   {
     "code": "KS",
-    "name": "Kansas",
-    "capital": "Topeka"
+    "country": "Kansas",
+    "capital": "Topeka",
+    "name": "Topeka, Kansas, KS"
   },
   {
     "code": "KY",
-    "name": "Kentucky",
-    "capital": "Frankfort"
+    "country": "Kentucky",
+    "capital": "Frankfort",
+    "name": "Frankfort, Kentucky, KY"
   },
   {
     "code": "LA",
-    "name": "Louisiana",
-    "capital": "Baton Rouge"
+    "country": "Louisiana",
+    "capital": "Baton Rouge",
+    "name": "Baton Rouge, Louisiana, LA"
   },
   {
     "code": "ME",
-    "name": "Maine",
-    "capital": "Augusta"
+    "country": "Maine",
+    "capital": "Augusta",
+    "name": "Augusta, Maine, ME"
   },
   {
     "code": "MD",
-    "name": "Maryland",
-    "capital": "Annapolis"
+    "country": "Maryland",
+    "capital": "Annapolis",
+    "name": "Annapolis, Maryland, MD"
   },
   {
     "code": "MA",
-    "name": "Massachusetts",
-    "capital": "Boston"
+    "country": "Massachusetts",
+    "capital": "Boston",
+    "name": "Boston, Massachusetts, MA"
   },
   {
     "code": "MI",
-    "name": "Michigan",
-    "capital": "Lansing"
+    "country": "Michigan",
+    "capital": "Lansing",
+    "name": "Lansing, Michigan, MI"
   },
   {
     "code": "MN",
-    "name": "Minnesota",
-    "capital": "Saint Paul"
+    "country": "Minnesota",
+    "capital": "Saint Paul",
+    "name": "Saint Paul, Minnesota, MN"
   },
   {
     "code": "MS",
-    "name": "Mississippi",
-    "capital": "Jackson"
+    "country": "Mississippi",
+    "capital": "Jackson",
+    "name": "Jackson, Mississippi, MS"
   },
   {
     "code": "MO",
-    "name": "Missouri",
-    "capital": "Jefferson City"
+    "country": "Missouri",
+    "capital": "Jefferson City",
+    "name": "Jefferson City, Missouri, MO"
   },
   {
     "code": "MT",
-    "name": "Montana",
-    "capital": "Helana"
+    "country": "Montana",
+    "capital": "Helana",
+    "name": "Helana, Montana, MT"
   },
   {
     "code": "NE",
-    "name": "Nebraska",
-    "capital": "Lincoln"
+    "country": "Nebraska",
+    "capital": "Lincoln",
+    "name": "Lincoln, Nebraska, NE"
   },
   {
     "code": "NV",
-    "name": "Nevada",
-    "capital": "Carson City"
+    "country": "Nevada",
+    "capital": "Carson City",
+    "name": "Carson City, Nevada, NV"
   },
   {
     "code": "NH",
-    "name": "New Hampshire",
-    "capital": "Concord"
+    "country": "New Hampshire",
+    "capital": "Concord",
+    "name": "Concord, New Hampshire, NH"
   },
   {
     "code": "NJ",
-    "name": "New Jersey",
-    "capital": "Trenton"
+    "country": "New Jersey",
+    "capital": "Trenton",
+    "name": "Trenton, New Jersey, NJ"
   },
   {
     "code": "NM",
-    "name": "New Mexico",
-    "capital": "Santa Fe"
+    "country": "New Mexico",
+    "capital": "Santa Fe",
+    "name": "Santa Fe, New Mexico, NM"
   },
   {
     "code": "NY",
-    "name": "New York",
-    "capital": "Albany"
+    "country": "New York",
+    "capital": "Albany",
+    "name": "Albany, New York, NY"
   },
   {
     "code": "NC",
-    "name": "North Carolina",
-    "capital": "Raleigh"
+    "country": "North Carolina",
+    "capital": "Raleigh",
+    "name": "Raleigh, North Carolina, NC"
   },
   {
     "code": "ND",
-    "name": "North Dakota",
-    "capital": "Bismarck"
+    "country": "North Dakota",
+    "capital": "Bismarck",
+    "name": "Bismarck, North Dakota, ND"
   },
   {
     "code": "OH",
-    "name": "Ohio",
-    "capital": "Columbus"
+    "country": "Ohio",
+    "capital": "Columbus",
+    "name": "Columbus, Ohio, OH"
   },
   {
     "code": "OK",
-    "name": "Oklahoma",
-    "capital": "Oklahoma City"
+    "country": "Oklahoma",
+    "capital": "Oklahoma City",
+    "name": "Oklahoma City, Oklahoma, OK"
   },
   {
     "code": "OR",
-    "name": "Oregon",
-    "capital": "Salem"
+    "country": "Oregon",
+    "capital": "Salem",
+    "name": "Salem, Oregon, OR"
   },
   {
     "code": "PA",
-    "name": "Pennsylvania",
-    "capital": "Harrisburg"
+    "country": "Pennsylvania",
+    "capital": "Harrisburg",
+    "name": "Harrisburg, Pennsylvania, PA"
   },
   {
     "code": "RI",
-    "name": "Rhode Island",
-    "capital": "Providence"
+    "country": "Rhode Island",
+    "capital": "Providence",
+    "name": "Providence, Rhode Island, RI"
   },
   {
     "code": "SC",
-    "name": "South Carolina",
-    "capital": "Columbia"
+    "country": "South Carolina",
+    "capital": "Columbia",
+    "name": "Columbia, South Carolina, SC"
   },
   {
     "code": "SD",
-    "name": "South Dakota",
-    "capital": "Pierre"
+    "country": "South Dakota",
+    "capital": "Pierre",
+    "name": "Pierre, South Dakota, SD"
   },
   {
     "code": "TN",
-    "name": "Tennessee",
-    "capital": "Nashville"
+    "country": "Tennessee",
+    "capital": "Nashville",
+    "name": "Nashville, Tennessee, TN"
   },
   {
     "code": "TX",
-    "name": "Texas",
-    "capital": "Austin"
+    "country": "Texas",
+    "capital": "Austin",
+    "name": "Austin, Texas, TX"
   },
   {
     "code": "UT",
-    "name": "Utah",
-    "capital": "Salt Lake City"
+    "country": "Utah",
+    "capital": "Salt Lake City",
+    "name": "Salt Lake City, Utah, UT"
   },
   {
     "code": "VT",
-    "name": "Vermont",
-    "capital": "Montpelier"
+    "country": "Vermont",
+    "capital": "Montpelier",
+    "name": "Montpelier, Vermont, VT"
   },
   {
     "code": "VA",
-    "name": "Virginia",
-    "capital": "Richmond"
+    "country": "Virginia",
+    "capital": "Richmond",
+    "name": "Richmond, Virginia, VA"
   },
   {
     "code": "WA",
-    "name": "Washington",
-    "capital": "Olympia"
+    "country": "Washington",
+    "capital": "Olympia",
+    "name": "Olympia, Washington, WA"
   },
   {
     "code": "WV",
-    "name": "West Virginia",
-    "capital": "Charleston"
+    "country": "West Virginia",
+    "capital": "Charleston",
+    "name": "Charleston, West Virginia, WV"
   },
   {
     "code": "WI",
-    "name": "Wisconsin",
-    "capital": "Madison"
+    "country": "Wisconsin",
+    "capital": "Madison",
+    "name": "Madison, Wisconsin, WI"
   },
   {
     "code": "WY",
-    "name": "Wyoming",
-    "capital": "Cheyenne"
+    "country": "Wyoming",
+    "capital": "Cheyenne",
+    "name": "Cheyenne, Wyoming, WY"
   }
 ]
