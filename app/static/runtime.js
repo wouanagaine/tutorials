@@ -113,6 +113,23 @@ function updateEntityKnowledge(entityID, destination, value, onloadCB) {
 
 }
 
+function updateGlobalKnowledge(destination, value, onloadCB) {
+  var oReq = new XMLHttpRequest();
+  oReq.open('POST', httpURL + '/' + simID + '/globalKnowledge', true);
+  oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
+  oReq.setRequestHeader('accept', '');
+  oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
+  oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
+
+  oReq.onload = function() {
+    onloadCB();
+  };
+  var j = {};
+  j[destination] = value;
+  oReq.send(JSON.stringify(j));
+
+}
+
 function sendSuccess(requestID, jsonString) {
   var oReq = new XMLHttpRequest();
   oReq.open('POST', httpURL + '/' + simID + '/actions/' + requestID + '/success', true);

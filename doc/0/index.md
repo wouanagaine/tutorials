@@ -93,7 +93,7 @@ front page of a given subreddit via the `GetFrontPage` action;
 2. If the reddit API returns results, the `reddit manager` will
   - display a summary of the topics returned as thumbnails in the web page,
   - and send the results to the `city manager` agent using
-  [craft ai messaging system](http://doc.craft.ai/concepts_architecture/messages/index.html);
+  [craft ai messaging system](http://doc.craft.ai/behaviors/messages/index.html#the-messaging-system);
 
 3. The `city manager` agent will then
   - compare the results' titles with a list of capitals (`GetCapitals` action),

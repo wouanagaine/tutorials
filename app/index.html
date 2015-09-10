@@ -167,9 +167,11 @@
         registerActions(function() {
           createEntity(TUTO_FOLDER + '/agent_0.bt', {}, function(responseText) {
             var proceed = function() {
-              $('#stop').prop('disabled', false);
-              $('#submitsub').prop('disabled', false);
-              doUpdate();
+              updateGlobalKnowledge('capitals', countries, function() {
+                $('#stop').prop('disabled', false);
+                $('#submitsub').prop('disabled', false);
+                doUpdate();
+              });
             };
             createEntity(TUTO_FOLDER + '/agent_1.bt', {}, proceed, function() {
               console.log('second agent has not been instantiated');
@@ -211,7 +213,7 @@
   </nav>
   <div class="container-fluid" style="width: 100%; overflow: hidden;" id="main">
     <div class="row-fluid">
-      <div class="col-md-8 col-sm-8 col-xs-6" style="overflow-y: scroll;" id="results">
+      <div class="col-md-8 col-sm-8 col-xs-6" style="overflow-y: auto;" id="results">
         <div class="container-fluid" id="messages"></div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6">
@@ -219,7 +221,7 @@
           <div class="col-md-12" id="map-canvas" style="height: 100%;"></div>
         </div>
         <div class="row" style="height: 10px;"></div>
-        <div class="row" id="capitals" style="overflow-y: scroll;">
+        <div class="row" id="capitals" style="overflow-y: auto;">
           <div class="container-fluid" id="capitalsID"></div>
         </div>
       </div>

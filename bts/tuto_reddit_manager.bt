@@ -1,6 +1,6 @@
 [
   {
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   {
     "metadata": {
@@ -19,48 +19,19 @@
           {
             "activated": true,
             "metadata": {
-              "label": "initialisation, only done once",
-              "itemTemplate": "BTSequenceNode.qml"
+              "label": "",
+              "itemTemplate": "BTSetNode.qml"
             },
-            "properties": {},
-            "children": [
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "",
-                  "itemTemplate": "BTSetNode.qml"
-                },
-                "properties": {
-                  "destination": "lastID",
-                  "op": {
-                    "type": "string",
-                    "value": ""
-                  }
-                },
-                "children": [],
-                "id": "00dde1ae-e095-43e4-828b-e3e7ea731b06",
-                "type": "set"
-              },
-              {
-                "activated": true,
-                "metadata": {
-                  "label": "",
-                  "itemTemplate": "BTSetNode.qml"
-                },
-                "properties": {
-                  "destination": "reason",
-                  "op": {
-                    "type": "string",
-                    "value": ""
-                  }
-                },
-                "children": [],
-                "id": "afb7b58a-9817-4d43-bcbc-d67cf7738ce6",
-                "type": "set"
+            "properties": {
+              "destination": "lastID",
+              "op": {
+                "type": "string",
+                "value": ""
               }
-            ],
-            "id": "5eb7a2dd-e9aa-4fd1-87a5-2f1a9fa19aed",
-            "type": "sequence"
+            },
+            "children": [],
+            "id": "00dde1ae-e095-43e4-828b-e3e7ea731b06",
+            "type": "set"
           },
           {
             "activated": true,
@@ -153,25 +124,65 @@
                           {
                             "activated": true,
                             "metadata": {
-                              "label": "send results to the \"cityMgr\" entity",
-                              "itemTemplate": "BTSendMessageNode.qml"
+                              "label": ""
                             },
                             "properties": {
-                              "channel": {
-                                "type": "string",
-                                "value": "cityMgr"
-                              },
-                              "inputParams": [
-                                {
-                                  "key": "content",
-                                  "type": "entityKnowledge",
-                                  "value": "front"
-                                }
-                              ]
+                              "active": "false"
                             },
-                            "children": [],
-                            "id": "67b15031-2aef-4e93-b63f-64fee8a520ca",
-                            "type": "sendMessage"
+                            "children": [
+                              {
+                                "activated": true,
+                                "metadata": {
+                                  "label": "send results to the \"cityMgr\" entity",
+                                  "itemTemplate": "BTSendMessageNode.qml"
+                                },
+                                "properties": {
+                                  "channel": {
+                                    "type": "string",
+                                    "value": "cityMgr"
+                                  },
+                                  "inputParams": [
+                                    {
+                                      "key": "content",
+                                      "type": "entityKnowledge",
+                                      "value": "front"
+                                    }
+                                  ]
+                                },
+                                "children": [],
+                                "id": "67b15031-2aef-4e93-b63f-64fee8a520ca",
+                                "type": "sendMessage"
+                              },
+                              {
+                                "activated": true,
+                                "metadata": {
+                                  "label": ""
+                                },
+                                "properties": {},
+                                "children": [
+                                  {
+                                    "activated": true,
+                                    "metadata": {
+                                      "label": ""
+                                    },
+                                    "properties": {
+                                      "destination": "reason",
+                                      "op": {
+                                        "type": "string",
+                                        "value": "sending message failed"
+                                      }
+                                    },
+                                    "children": [],
+                                    "id": "e0ecbad9-602d-4df3-8395-383e6b06bc71",
+                                    "type": "set"
+                                  }
+                                ],
+                                "id": "4a4e1317-7cff-4840-ab12-f26d77629307",
+                                "type": "failure"
+                              }
+                            ],
+                            "id": "815d7fd9-43c4-4d9c-904a-034651f60fc8",
+                            "type": "priority"
                           },
                           {
                             "activated": true,
