@@ -6,7 +6,7 @@ Use the condition node to test the value of an entry of the agent's knowledge.
 
 ## Adding a condition to the behavior ##
 
-In this tutorial we will use the [condition node](http://doc.craft.ai/concepts_architecture/behaviors/condition/index.html) (<span class='craft-node-condition'></span>) to test if the knowledge entry "answer" is different from an empty string. If so, we will execute the next child of the sequence, else the condition will fail and so will the sequence, thus skipping the "Say" action.
+In this tutorial we will use the [condition node](http://doc.craft.ai/behaviors/condition/index.html) (<span class='craft-node-condition'></span>) to test if the knowledge entry "answer" is different from an empty string. If so, we will execute the next child of the sequence, else the condition will fail and so will the sequence, thus skipping the "Say" action.
 Simply drag a condition node from the palette to the canvas to have the following pattern:
 ![example tutorial 3](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/3/example3.png)
 You will need to configure the condition node by double-clicking on it and set its properties as described below:

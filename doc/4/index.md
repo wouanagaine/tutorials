@@ -17,7 +17,7 @@ Then we will have two actions in parallel: one displaying the weather icon on th
 Drag a parallel node from the palette and drop it under the main sequence, on the right of the "GetCityWeather" action.
 Let's keep the default settings for the parallel node, they already meet our expectations.
 Under the parallel node, add two action nodes. Set the first one as described below:
-![display city weather](DisplayCityWeatherProperties.png)
+![display city weather](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/4/DisplayCityWeatherProperties.png)
 
 The second action is "Say" with a message being the entity knowledge `weather.description`.
 
