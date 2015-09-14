@@ -1,4 +1,4 @@
-# Tutorial #
+# Tutorials #
 
 Here is a set of tutorials that will help you develop your **craft ai** skills:
 
