@@ -13,7 +13,7 @@ We will introduce a "priority selector" node in the behavior tree to do this. Dr
 ![condition properties](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/6/ConditionProperties.png)
 Also, it is important to set the "priority selector" node to "active", so that it executes its first child (the condition) at every decision step.
 
-At last, it is necessary to initialize the entity knowledge "weather.id", so that the predicate in the condition node can be tested. To do so, simply add a "set" node at the beginning of the high level sequence, setting the initial value of "weather.id" to 0.
+At last, it is necessary to initialize the agent knowledge "weather.id", so that the predicate in the condition node can be tested. To do so, simply add a "set" node at the beginning of the high level sequence, setting the initial value of "weather.id" to 0.
 
 In the end, the behavior tree should look like this:
 ![example 6](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/6/example6.png)

@@ -11,7 +11,7 @@ In the "Tutorials" behavior tree that you previously created, drag the [sequence
 Set the leftmost action properties as described below:
 ![prompt action](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/2/prompt.png)
 This "Prompt" action displays a pop-up window with an input field. On submission, the [agent knowledge](http://doc.craft.ai/knowledge/index.html#entity-knowledge) will be updated with the value of the input stored under the key "answer".
-Now you can use this as an input for your "Say" action. Simply double-click on it, and replace the type of the `message` input by "Entity knowledge" and the value by "answer".
+Now you can use this as an input for your "Say" action. Simply double-click on it, and replace the type of the `message` input by "Agent knowledge" and the value by "answer".
 ![say action](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/2/say.png)
 
 Go to [the tutorial page](http://www.craft.ai/tutorials/): once connected to **craft ai** services, you will be prompted for a message to display. If you enter "Hi!" and hit "submit", the web page will display "Agent 0 says: Hi!", and the pop-up will reappear and so on.
