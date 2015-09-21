@@ -19,7 +19,7 @@ Let's keep the default settings for the parallel node, they already meet our exp
 Under the parallel node, add two action nodes. Set the first one as described below:
 ![display city weather](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/4/DisplayCityWeatherProperties.png)
 
-The second action is "Say" with a message being the entity knowledge `weather.description`.
+The second action is "Say" with a message being the agent knowledge `weather.description`.
 
 In the end, your resulting behavior tree should look like this:
 ![example 4](https://raw.githubusercontent.com/craft-ai/tutorials/master/doc/4/example4.png)

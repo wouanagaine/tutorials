@@ -22,13 +22,13 @@ function registerActions(onloadCB) {
   recursiveReg();
 }
 
-function Say(requestID, entityID, params) {
-  messages.innerHTML += '<br/>Agent ' + entityID + ' says: ' + params.message;
+function Say(requestID, agentID, params) {
+  messages.innerHTML += '<br/>Agent ' + agentID + ' says: ' + params.message;
   $('#results').animate({scrollTop: document.getElementById('messages').offsetHeight}, 1000);
   sendSuccess(requestID);
 }
 
-function GetFrontPage(requestID, entityID, params) {
+function GetFrontPage(requestID, agentID, params) {
   loading.innerHTML = 'loading...';
   console.log('requesting front page');
   $.getJSON('http://www.reddit.com/r/{0}/new/.json?limit=16&after=t3_{1}&show=all&sr_detail&jsonp=?'.format(params.subreddit, params.after), function(data) {
@@ -62,7 +62,7 @@ function GetFrontPage(requestID, entityID, params) {
   }, true);
 }
 
-function ShowPic(requestID, entityID, params) {
+function ShowPic(requestID, agentID, params) {
   for (var i = 0; i < params.front.length; ++i) {
     var kb = params.front[i];
     loading.innerHTML = 'refreshing...';
@@ -75,7 +75,7 @@ function ShowPic(requestID, entityID, params) {
   sendSuccess(requestID);
 }
 
-function GetCapitals(requestID, entityID, params) {
+function GetCapitals(requestID, agentID, params) {
   function matchCapital(name) {
     var matching = '';
     countries.some(function(i) {
@@ -109,7 +109,7 @@ function GetCapitals(requestID, entityID, params) {
   sendSuccess(requestID, '{"capitals":' + JSON.stringify(cityList) + '}');
 }
 
-function GetFirstElement(requestID, entityID, params) {
+function GetFirstElement(requestID, agentID, params) {
   if (params.array === null) {
     sendFailure(requestID);
   }
@@ -122,7 +122,7 @@ function GetFirstElement(requestID, entityID, params) {
   }
 }
 
-function GetCityWeather(requestID, entityID, params) {
+function GetCityWeather(requestID, agentID, params) {
   function getWeather(city) {
     $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city, function(data) {
       if (data.weather !== undefined) {
@@ -145,7 +145,7 @@ function GetCityWeather(requestID, entityID, params) {
   getWeather(params.cityName);
 }
 
-function DisplayCityWeather(requestID, entityID, params) {
+function DisplayCityWeather(requestID, agentID, params) {
   function displayOnMap(city, weather) {
     geocoder.geocode({'address': city}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -172,13 +172,13 @@ function DisplayCityWeather(requestID, entityID, params) {
   sendSuccess(requestID);
 }
 
-function DisplayCityThumbnail(requestID, entityID, params) {
+function DisplayCityThumbnail(requestID, agentID, params) {
   capitalsID.innerHTML += '<div class="col-md-6"><div class="thumbnail capitalThumb" style="height: 160px; overflow: hidden;"><a href="{1}" target="_blank"><img src="{2}" style="max-height: 100px;"></a><div class="caption" style="text-align:center;"><strong>{0}</strong></div></div></div>'.format(params.city.name, params.city.url, params.city.pic);
   $('#capitals').animate({scrollTop: document.getElementById('capitalsID').offsetHeight}, 1000);
   sendSuccess(requestID);
 }
 
-function EndOfSub(requestID, entityID, params) {
+function EndOfSub(requestID, agentID, params) {
   $('#next').prop('disabled', true);
   $('#nextFooter').prop('disabled', true);
   messages.innerHTML += '<div class="col-md-3 col-sm-6"><div class="thumbnail endOfSub" style="height: 200px;"><img src="http://ipadwatcher.com/wp-content/uploads/2010/05/dead-end.jpg" style="height: 120px;"><div class="caption" style="text-align:center;"><h4>{0}</h4></div></div></div>'.format(params.message);
@@ -187,12 +187,12 @@ function EndOfSub(requestID, entityID, params) {
   sendSuccess(requestID);
 }
 
-function Debug(requestID, entityID, params) {
-  console.log('message from agent', entityID + ':', params.message);
+function Debug(requestID, agentID, params) {
+  console.log('message from agent', agentID + ':', params.message);
   sendSuccess(requestID);
 }
 
-function Prompt(requestID, entityID, params) {
+function Prompt(requestID, agentID, params) {
   var succeeds = function() {
     $('#prompt').off('hidden.bs.modal', succeeds);
     sendSuccess(requestID, '{"answer":' + JSON.stringify($('#promptinput').val()) + '}');

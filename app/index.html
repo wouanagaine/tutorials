@@ -161,19 +161,19 @@
       });
       $('#run').prop('disabled', true);
       $('#submitsub').prop('disabled', true);
-      createSimulation(TUTO_OWNER, TUTO_PROJECT, TUTO_BRANCH, function(instanceId) {
+      createInstance(TUTO_OWNER, TUTO_PROJECT, TUTO_BRANCH, function(instanceId) {
         console.log('Instance', instanceId, 'created');
         doWS();
         registerActions(function() {
-          createEntity(TUTO_FOLDER + '/agent_0.bt', {}, function(responseText) {
+          createAgent(TUTO_FOLDER + '/agent_0.bt', {}, function(responseText) {
             var proceed = function() {
-              updateGlobalKnowledge('capitals', countries, function() {
+              updateInstanceKnowledge('capitals', countries, function() {
                 $('#stop').prop('disabled', false);
                 $('#submitsub').prop('disabled', false);
                 doUpdate();
               });
             };
-            createEntity(TUTO_FOLDER + '/agent_1.bt', {}, proceed, function() {
+            createAgent(TUTO_FOLDER + '/agent_1.bt', {}, proceed, function() {
               console.log('second agent has not been instantiated');
               proceed();
             });
@@ -193,9 +193,9 @@
       messages.innerHTML = '';
       capitalsID.innerHTML = '';
       matchedCapitals = [];
-      loading.innerHTML = 'no simulation';
+      loading.innerHTML = 'no instance';
       clearInterval(idUpdate);
-      destroySimulation();
+      destroyInstance();
       ws.close();
     }
 
@@ -234,7 +234,7 @@
           </div>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12" style="bottom: 1px; position: fixed;">
-          <div class="label label-info" id="loading">no simulation</div>
+          <div class="label label-info" id="loading">no instance</div>
         </div>
     </div>
   </div>

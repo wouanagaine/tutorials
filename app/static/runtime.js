@@ -3,13 +3,13 @@ String.prototype.format = function() {
   return this.replace(/{(\d+)}/g, function(match, number) { return typeof args[number] != 'undefined' ? args[number] : match; });
 };
 
-var simID;
-var entityID;
+var instanceID;
+var agentID;
 console.log(window.location.href);
 var httpURL;
 var wsURL;
 
-function createSimulation(user, project, version, onloadCB) {
+function createInstance(user, project, version, onloadCB) {
   httpURL = 'https://' + RUNTIME_URL + '/api/v1/' + user + '/' + project + '/' + version;
   wsURL = 'wss://' + RUNTIME_URL + '/api/v1/' + user + '/' + project + '/' + version;
   var oReq = new XMLHttpRequest();
@@ -19,20 +19,20 @@ function createSimulation(user, project, version, onloadCB) {
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
   oReq.onload = function() {
-    simID = JSON.parse(oReq.responseText).instance.instance_id;
-    onloadCB(simID);
+    instanceID = JSON.parse(oReq.responseText).instance.instance_id;
+    onloadCB(instanceID);
   };
   oReq.onerror = function() {
-    alert('error while creating simulation');
+    alert('error while creating instance');
   };
   oReq.send();
 }
 
-function destroySimulation(onloadCB) {
+function destroyInstance(onloadCB) {
   console.log('delete');
   //clearInterval( idUpdate );
   var oReq = new XMLHttpRequest();
-  oReq.open('DELETE', httpURL + '/' + simID, true);
+  oReq.open('DELETE', httpURL + '/' + instanceID, true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -41,9 +41,9 @@ function destroySimulation(onloadCB) {
   oReq.onload = onloadCB;
 }
 
-function createEntity(behavior, knowledge, onloadCB, onErrorCB) {
+function createAgent(behavior, knowledge, onloadCB, onErrorCB) {
   var oReq = new XMLHttpRequest();
-  oReq.open('PUT', httpURL + '/' + simID + '/entities', true);
+  oReq.open('PUT', httpURL + '/' + instanceID + '/agents', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -62,7 +62,7 @@ function createEntity(behavior, knowledge, onloadCB, onErrorCB) {
 
 function update() {
   var oReq = new XMLHttpRequest();
-  oReq.open('POST', httpURL + '/' + simID + '/update', true);
+  oReq.open('POST', httpURL + '/' + instanceID + '/update', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -75,13 +75,13 @@ function update() {
   oReq.send('{"time":0.5,"ts":' + new Date().getTime() + '}');
 }
 
-function cancel(requestID, entityID, params) {
+function cancel(requestID, agentID, params) {
   sendCancel(requestID);
 }
 
-function getEntityKnowledge(entityID, onloadCB) {
+function getAgentKnowledge(agentID, onloadCB) {
   var oReq = new XMLHttpRequest();
-  oReq.open('GET', httpURL + '/' + simID + '/entities/' + entityID + '/knowledge', true);
+  oReq.open('GET', httpURL + '/' + instanceID + '/agents/' + agentID + '/knowledge', true);
   oReq.setRequestHeader('Content-type', 'application/json');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
   oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
@@ -96,9 +96,26 @@ function getEntityKnowledge(entityID, onloadCB) {
 
 }
 
-function updateEntityKnowledge(entityID, destination, value, onloadCB) {
+function updateAgentKnowledge(agentID, destination, value, onloadCB) {
   var oReq = new XMLHttpRequest();
-  oReq.open('POST', httpURL + '/' + simID + '/entities/' + entityID + '/knowledge', true);
+  oReq.open('POST', httpURL + '/' + instanceID + '/agents/' + agentID + '/knowledge', true);
+  oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
+  oReq.setRequestHeader('accept', '');
+  oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
+  oReq.setRequestHeader('X-Craft-Ai-App-Secret', TUTO_APP_SECRET);
+
+  oReq.onload = function() {
+    onloadCB();
+  };
+  var j = {};
+  j[destination] = value;
+  oReq.send(JSON.stringify(j));
+
+}
+
+function updateInstanceKnowledge(destination, value, onloadCB) {
+  var oReq = new XMLHttpRequest();
+  oReq.open('POST', httpURL + '/' + instanceID + '/instanceKnowledge', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -132,7 +149,7 @@ function updateGlobalKnowledge(destination, value, onloadCB) {
 
 function sendSuccess(requestID, jsonString) {
   var oReq = new XMLHttpRequest();
-  oReq.open('POST', httpURL + '/' + simID + '/actions/' + requestID + '/success', true);
+  oReq.open('POST', httpURL + '/' + instanceID + '/actions/' + requestID + '/success', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -143,7 +160,7 @@ function sendSuccess(requestID, jsonString) {
 
 function sendFailure(requestID, jsonString) {
   var oReq = new XMLHttpRequest();
-  oReq.open('POST', httpURL + '/' + simID + '/actions/' + requestID + '/failure', true);
+  oReq.open('POST', httpURL + '/' + instanceID + '/actions/' + requestID + '/failure', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -153,7 +170,7 @@ function sendFailure(requestID, jsonString) {
 
 function sendCancel(requestID) {
   var oReq = new XMLHttpRequest();
-  oReq.open('POST', httpURL + '/' + simID + '/actions/' + requestID + '/cancelation', true);
+  oReq.open('POST', httpURL + '/' + instanceID + '/actions/' + requestID + '/cancelation', true);
   oReq.setRequestHeader('content-type', 'application/html; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -163,7 +180,7 @@ function sendCancel(requestID) {
 
 function registerAction(jsonString, onloadCB) {
   var oReq = new XMLHttpRequest();
-  oReq.open('PUT', httpURL + '/' + simID + '/actions', true);
+  oReq.open('PUT', httpURL + '/' + instanceID + '/actions', true);
   oReq.setRequestHeader('content-type', 'application/json; charset=utf-8');
   oReq.setRequestHeader('accept', '');
   oReq.setRequestHeader('X-Craft-Ai-App-Id', TUTO_APP_ID);
@@ -183,7 +200,7 @@ function doUpdate() {
 }
 
 function doWS() {
-  var wsUrlRoute = wsURL + '/' + simID + '/websockets';
+  var wsUrlRoute = wsURL + '/' + instanceID + '/websockets';
   console.log('WS Connexion on', wsUrlRoute + ':');
   if (wsUrlRoute) {
     console.log('requesting WS connexion...');
@@ -192,7 +209,7 @@ function doWS() {
       if (evt.data != 'ping') {
         var jsonEvt = JSON.parse(evt.data);
         console.log('WS data:', evt.data);
-        window[jsonEvt.call](jsonEvt.requestId , jsonEvt.entityId, jsonEvt.input);
+        window[jsonEvt.call](jsonEvt.requestId , jsonEvt.agentID, jsonEvt.input);
       }
       else {
         console.log('ping');

@@ -1,4 +1,4 @@
-# Tutorials #
+# Tutorial #
 
 Here is a set of tutorials that will help you develop your **craft ai** skills:
 
@@ -9,5 +9,7 @@ Here is a set of tutorials that will help you develop your **craft ai** skills:
 5. [Tutorial 4: Parallel node](doc/4/index.md)
 6. [Tutorial 5: Until node](doc/5/index.md)
 7. [Tutorial 6: Priority selector node](doc/6/index.md)
+8. [Tutorial 7: Message nodes](doc/7/index.md)
+9. [Tutorial 8: Embedded node](doc/8/index.md)
 
 And if you encounter any problem, don't hesitate to contact the support through the chat embedded in the [craft ai editor](http://editor.craft.ai/)!
