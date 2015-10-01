@@ -1,26 +1,24 @@
 [
   {
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   {
     "metadata": {
-      "label": "tuto_city_manager"
+      "label": "a18834b5-0f16-4fe6-81d1-82bcde8d96af"
     },
     "properties": {},
     "children": [
       {
         "activated": true,
         "metadata": {
-          "label": "",
-          "itemTemplate": "BTSequenceNode.qml"
+          "label": ""
         },
         "properties": {},
         "children": [
           {
             "activated": true,
             "metadata": {
-              "label": "",
-              "itemTemplate": "BTSubscribeMessageNode.qml"
+              "label": ""
             },
             "properties": {
               "channel": {
@@ -30,14 +28,45 @@
               "mode": "subscribe"
             },
             "children": [],
-            "id": "c6d83c2b-c5d4-42fc-a244-d8911e161f6a",
+            "id": "a82f554e-51cb-4d57-a3c4-74df9897c730",
             "type": "subscribeMessage"
           },
           {
             "activated": true,
             "metadata": {
-              "label": "",
-              "itemTemplate": "BTSelectorPrio.qml"
+              "label": ""
+            },
+            "properties": {
+              "destination": "answer.country",
+              "op": {
+                "type": "string",
+                "value": ""
+              }
+            },
+            "children": [],
+            "id": "3f6afe71-67c9-49fd-a921-7aaa7092596c",
+            "type": "set"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "destination": "weather.id",
+              "op": {
+                "type": "integer",
+                "value": "0"
+              }
+            },
+            "children": [],
+            "id": "373a4e8c-a1d6-41d2-b41e-3e70f4eff3b1",
+            "type": "set"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
             },
             "properties": {
               "active": "true"
@@ -46,16 +75,34 @@
               {
                 "activated": true,
                 "metadata": {
-                  "label": "",
-                  "itemTemplate": "BTSequenceNode.qml"
+                  "label": ""
+                },
+                "properties": {
+                  "op1": {
+                    "type": "entityKnowledge",
+                    "value": "weather.id"
+                  },
+                  "op2": {
+                    "type": "integer",
+                    "value": "802"
+                  },
+                  "op": "=="
+                },
+                "children": [],
+                "id": "87e372a8-a329-4770-9318-25e17b8d8cc1",
+                "type": "condition"
+              },
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
                 },
                 "properties": {},
                 "children": [
                   {
                     "activated": true,
                     "metadata": {
-                      "label": "",
-                      "itemTemplate": "BTReceiveMessageNode.qml"
+                      "label": ""
                     },
                     "properties": {
                       "channel": {
@@ -63,38 +110,11 @@
                         "value": "cityMgr"
                       },
                       "sender": "",
-                      "content": "results"
+                      "content": "result"
                     },
                     "children": [],
-                    "id": "ebda6634-27e5-4034-9ac2-771b3478e50d",
+                    "id": "b3b1bfad-dc19-49a2-b2fb-b76d4c989f0b",
                     "type": "receiveMessage"
-                  },
-                  {
-                    "activated": true,
-                    "metadata": {
-                      "label": "always succeeds",
-                      "itemTemplate": "BTActionNode.qml"
-                    },
-                    "properties": {
-                      "name": "GetCapitals",
-                      "inputParams": [
-                        {
-                          "key": "content",
-                          "type": "entityKnowledge",
-                          "value": "results.content"
-                        }
-                      ],
-                      "outputParams": [
-                        {
-                          "key": "capitals",
-                          "type": "entityKnowledge",
-                          "value": "capitals"
-                        }
-                      ]
-                    },
-                    "children": [],
-                    "id": "14b1324b-5a51-4fa7-9db4-2a13bbc040d3",
-                    "type": "action"
                   },
                   {
                     "activated": true,
@@ -103,12 +123,12 @@
                     },
                     "properties": {
                       "op1": {
-                        "type": "boolean",
-                        "value": "true"
+                        "type": "entityKnowledge",
+                        "value": "answer.country"
                       },
                       "op2": {
-                        "type": "boolean",
-                        "value": "false"
+                        "type": "string",
+                        "value": "Belgium"
                       },
                       "op": "=="
                     },
@@ -123,8 +143,7 @@
                           {
                             "activated": true,
                             "metadata": {
-                              "label": "Fails if the \"capitals\" array is empty",
-                              "itemTemplate": "BTActionNode.qml"
+                              "label": ""
                             },
                             "properties": {
                               "name": "GetFirstElement",
@@ -132,24 +151,44 @@
                                 {
                                   "key": "array",
                                   "type": "entityKnowledge",
-                                  "value": "capitals"
+                                  "value": "result.content"
                                 }
                               ],
                               "outputParams": [
                                 {
                                   "key": "element",
                                   "type": "entityKnowledge",
-                                  "value": "nextCapital"
+                                  "value": "answer"
                                 },
                                 {
                                   "key": "capitals",
                                   "type": "entityKnowledge",
-                                  "value": "capitals"
+                                  "value": "result.content"
                                 }
                               ]
                             },
                             "children": [],
-                            "id": "3d7cab47-597b-425c-ba76-454438ff6cf9",
+                            "id": "8ab163ed-1bcd-4263-9af2-6564d882eafc",
+                            "type": "action"
+                          },
+                          {
+                            "activated": true,
+                            "metadata": {
+                              "label": ""
+                            },
+                            "properties": {
+                              "name": "Say",
+                              "inputParams": [
+                                {
+                                  "key": "message",
+                                  "type": "entityKnowledge",
+                                  "value": "answer.name"
+                                }
+                              ],
+                              "outputParams": []
+                            },
+                            "children": [],
+                            "id": "eadbfd8a-ee6e-4c7e-982d-7f9df5e3863f",
                             "type": "action"
                           },
                           {
@@ -163,37 +202,35 @@
                                 {
                                   "key": "cityName",
                                   "type": "entityKnowledge",
-                                  "value": "nextCapital.name"
+                                  "value": "answer.name"
                                 }
                               ],
                               "outputParams": [
                                 {
                                   "key": "weather",
                                   "type": "entityKnowledge",
-                                  "value": "nextCapital.weather"
+                                  "value": "weather"
                                 }
                               ]
                             },
                             "children": [],
-                            "id": "f0106d26-c012-4b5c-ae9a-82a77eb100e0",
+                            "id": "d7d20d0c-610f-409d-afad-8ce0e5cc5907",
                             "type": "action"
                           },
                           {
                             "activated": true,
                             "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTParallelNode.qml"
+                              "label": ""
                             },
                             "properties": {
                               "statusCondition": "failsIfAnyFails",
-                              "retryPolicy": "propagateToAll"
+                              "retryPolicy": "propagateToRunning"
                             },
                             "children": [
                               {
                                 "activated": true,
                                 "metadata": {
-                                  "label": "",
-                                  "itemTemplate": "BTActionNode.qml"
+                                  "label": ""
                                 },
                                 "properties": {
                                   "name": "DisplayCityWeather",
@@ -201,55 +238,54 @@
                                     {
                                       "key": "cityName",
                                       "type": "entityKnowledge",
-                                      "value": "nextCapital.name"
+                                      "value": "answer.name"
                                     },
                                     {
                                       "key": "cityWeather",
                                       "type": "entityKnowledge",
-                                      "value": "nextCapital.weather"
+                                      "value": "weather"
                                     }
                                   ],
                                   "outputParams": []
                                 },
                                 "children": [],
-                                "id": "15401a6a-bddd-408c-9434-e6e156e7e025",
+                                "id": "74470ea6-7252-4ab3-91fe-16bf6d9a14c1",
                                 "type": "action"
                               },
                               {
                                 "activated": true,
                                 "metadata": {
-                                  "label": "",
-                                  "itemTemplate": "BTActionNode.qml"
+                                  "label": ""
                                 },
                                 "properties": {
-                                  "name": "DisplayCityThumbnail",
+                                  "name": "Say",
                                   "inputParams": [
                                     {
-                                      "key": "city",
+                                      "key": "message",
                                       "type": "entityKnowledge",
-                                      "value": "nextCapital"
+                                      "value": "weather.description"
                                     }
                                   ],
                                   "outputParams": []
                                 },
                                 "children": [],
-                                "id": "696d9a4b-4c83-4cf4-aa19-cdd0968b36ea",
+                                "id": "97d50cef-8fa2-42d6-8b23-9177143fcacb",
                                 "type": "action"
                               }
                             ],
-                            "id": "dff82afc-3517-4578-a97e-b49129010d7b",
+                            "id": "555144c4-e67f-4dc0-a10a-27c68b520737",
                             "type": "parallel"
                           }
                         ],
-                        "id": "24c64d18-040f-4e29-aec5-f36be66f75cf",
+                        "id": "5bf2486e-ca28-4e67-b818-8aec21668804",
                         "type": "sequence"
                       }
                     ],
-                    "id": "a09a7029-2f92-488e-8904-3e937fe9956f",
+                    "id": "88067622-4b0f-47fd-aecf-05fc1bcb1237",
                     "type": "until"
                   }
                 ],
-                "id": "c274589a-4f27-4e24-84ed-44739993766a",
+                "id": "adb3acbb-af0b-4688-ba05-2284c7d218f8",
                 "type": "sequence"
               },
               {
@@ -263,18 +299,52 @@
                   "outputParams": []
                 },
                 "children": [],
-                "id": "eec40c1c-454d-416c-8034-efcdb985bb5b",
+                "id": "7a56fe14-5353-4a15-b545-9d0bf12b3760",
                 "type": "action"
               }
             ],
-            "id": "d194ca3a-b895-447a-a4c1-8fb82db5d973",
+            "id": "0aeb6e8d-fefe-4082-a736-35f4adb3d8f5",
             "type": "priority"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "Say",
+              "inputParams": [
+                {
+                  "key": "message",
+                  "type": "string",
+                  "value": "Done!"
+                }
+              ],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "5e26b7ed-f7e3-4af7-91d3-47ffbd160f26",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "Stall",
+              "inputParams": [],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "aee6eb96-24a5-40d0-aee7-735a0e8a6143",
+            "type": "action"
           }
         ],
-        "id": "e46bf722-7834-41d2-a1e3-fadfc0eee31f",
+        "id": "17b03946-8b71-4d71-9f1d-2d405bbfb36b",
         "type": "sequence"
       }
     ],
-    "id": "eee40b31-0e64-4c8b-a95e-5be7f22b01b5"
+    "id": "6c15d7f9-f460-4568-86ba-7bf098be332a"
   }
 ]

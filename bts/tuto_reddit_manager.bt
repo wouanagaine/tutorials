@@ -1,16 +1,15 @@
 [
   {
-    "version": "1.0.0"
+    "version": "1.2.0"
   },
   {
-    "uuid": "a08cf5d5-46d6-4201-96a7-1522383ac63a",
-    "name": "tuto_reddit_manager",
-    "description": "",
+    "metadata": {
+      "label": "tuto_reddit_manager"
+    },
+    "properties": {},
     "children": [
       {
-        "id": "b6255149-6352-44b5-a26f-4751711ffcac",
         "activated": true,
-        "type": "sequence",
         "metadata": {
           "label": "",
           "itemTemplate": "BTSequenceNode.qml"
@@ -18,294 +17,175 @@
         "properties": {},
         "children": [
           {
-            "id": "5eb7a2dd-e9aa-4fd1-87a5-2f1a9fa19aed",
             "activated": true,
-            "type": "sequence",
             "metadata": {
-              "label": "initialisation, only done once",
-              "itemTemplate": "BTSequenceNode.qml"
+              "label": "",
+              "itemTemplate": "BTSetNode.qml"
             },
-            "properties": {},
-            "children": [
-              {
-                "id": "00dde1ae-e095-43e4-828b-e3e7ea731b06",
-                "activated": true,
-                "type": "set",
-                "metadata": {
-                  "label": "",
-                  "itemTemplate": "BTSetNode.qml"
-                },
-                "properties": {
-                  "destination": "lastID",
-                  "op": {
-                    "value": "",
-                    "type": "string"
-                  }
-                },
-                "children": []
-              },
-              {
-                "id": "56f7329b-06a3-483f-8f9d-71fa8fcc1c52",
-                "activated": true,
-                "type": "set",
-                "metadata": {
-                  "label": "",
-                  "itemTemplate": "BTSetNode.qml"
-                },
-                "properties": {
-                  "destination": "showNext",
-                  "op": {
-                    "value": "false",
-                    "type": "boolean"
-                  }
-                },
-                "children": []
-              },
-              {
-                "id": "afb7b58a-9817-4d43-bcbc-d67cf7738ce6",
-                "activated": true,
-                "type": "set",
-                "metadata": {
-                  "label": "",
-                  "itemTemplate": "BTSetNode.qml"
-                },
-                "properties": {
-                  "destination": "reason",
-                  "op": {
-                    "value": "",
-                    "type": "string"
-                  }
-                },
-                "children": []
+            "properties": {
+              "destination": "lastID",
+              "op": {
+                "type": "string",
+                "value": ""
               }
-            ]
+            },
+            "children": [],
+            "id": "00dde1ae-e095-43e4-828b-e3e7ea731b06",
+            "type": "set"
           },
           {
-            "id": "ddc02ccb-cae7-4964-8640-052daa893d3a",
             "activated": true,
-            "type": "until",
             "metadata": {
               "label": "forever",
               "itemTemplate": "BTUntilNode.qml"
             },
             "properties": {
               "op1": {
-                "value": "true",
-                "type": "boolean"
+                "type": "boolean",
+                "value": "true"
               },
               "op2": {
-                "value": "false",
-                "type": "boolean"
+                "type": "boolean",
+                "value": "false"
               },
               "op": "=="
             },
             "children": [
               {
-                "id": "a63a16f6-72cc-4496-ae87-8a27be443dcf",
                 "activated": true,
-                "type": "sequence",
                 "metadata": {
                   "label": "",
-                  "itemTemplate": "BTSequenceNode.qml"
+                  "itemTemplate": "BTSelectorPrio.qml"
                 },
-                "properties": {},
+                "properties": {
+                  "active": "false"
+                },
                 "children": [
                   {
-                    "id": "1fbed4a4-9e3d-4b4f-b40d-efe482b8376b",
                     "activated": true,
-                    "type": "priority",
-                    "metadata": {
-                      "label": "reset lastID if random",
-                      "itemTemplate": "BTSelectorPrio.qml"
-                    },
-                    "properties": {
-                      "active": "false"
-                    },
-                    "children": [
-                      {
-                        "id": "6ef51d24-ed45-4f02-9f31-85de95a31267",
-                        "activated": true,
-                        "type": "condition",
-                        "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTConditionNode.qml"
-                        },
-                        "properties": {
-                          "op1": {
-                            "value": "subreddits",
-                            "type": "entityKnowledge"
-                          },
-                          "op2": {
-                            "value": "random",
-                            "type": "string"
-                          },
-                          "op": "!="
-                        },
-                        "children": []
-                      },
-                      {
-                        "id": "5133e452-fabe-4c7f-a391-abe5add07ffd",
-                        "activated": true,
-                        "type": "set",
-                        "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTSetNode.qml"
-                        },
-                        "properties": {
-                          "destination": "lastID",
-                          "op": {
-                            "value": "",
-                            "type": "string"
-                          }
-                        },
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "id": "c21c622b-2d76-4021-95a8-49734cae1ce2",
-                    "activated": true,
-                    "type": "priority",
                     "metadata": {
                       "label": "",
-                      "itemTemplate": "BTSelectorPrio.qml"
+                      "itemTemplate": "BTSequenceNode.qml"
                     },
-                    "properties": {
-                      "active": "false"
-                    },
+                    "properties": {},
                     "children": [
                       {
-                        "id": "aacd11a5-a354-4551-9e7c-5b1bd2144d6c",
                         "activated": true,
-                        "type": "sequence",
                         "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTSequenceNode.qml"
+                          "label": "retrieve the current page",
+                          "itemTemplate": "BTActionNode.qml"
                         },
-                        "properties": {},
+                        "properties": {
+                          "name": "GetFrontPage",
+                          "inputParams": [
+                            {
+                              "key": "after",
+                              "type": "entityKnowledge",
+                              "value": "lastID"
+                            },
+                            {
+                              "key": "subreddit",
+                              "type": "string",
+                              "value": "CityPorn"
+                            }
+                          ],
+                          "outputParams": [
+                            {
+                              "key": "last",
+                              "type": "entityKnowledge",
+                              "value": "lastID"
+                            },
+                            {
+                              "key": "frontpage",
+                              "type": "entityKnowledge",
+                              "value": "front"
+                            },
+                            {
+                              "key": "reason",
+                              "type": "entityKnowledge",
+                              "value": "reason"
+                            }
+                          ]
+                        },
+                        "children": [],
+                        "id": "4b47f0c6-e884-4156-900e-f2883e5fd3e7",
+                        "type": "action"
+                      },
+                      {
+                        "activated": true,
+                        "metadata": {
+                          "label": ""
+                        },
+                        "properties": {
+                          "statusCondition": "failsIfAnyFails",
+                          "retryPolicy": "propagateToRunning"
+                        },
                         "children": [
                           {
-                            "id": "4b47f0c6-e884-4156-900e-f2883e5fd3e7",
                             "activated": true,
-                            "type": "action",
                             "metadata": {
-                              "label": "retrieve the current page",
-                              "itemTemplate": "BTActionNode.qml"
+                              "label": ""
                             },
                             "properties": {
-                              "name": "GetFrontPage",
-                              "inputParams": [
-                                {
-                                  "key": "after",
-                                  "value": "lastID",
-                                  "type": "entityKnowledge"
-                                },
-                                {
-                                  "key": "subreddit",
-                                  "value": "subreddits",
-                                  "type": "entityKnowledge"
-                                }
-                              ],
-                              "outputParams": [
-                                {
-                                  "key": "last",
-                                  "value": "lastID",
-                                  "type": "entityKnowledge"
-                                },
-                                {
-                                  "key": "frontpage",
-                                  "value": "front",
-                                  "type": "entityKnowledge"
-                                },
-                                {
-                                  "key": "reason",
-                                  "value": "reason",
-                                  "type": "entityKnowledge"
-                                }
-                              ]
-                            },
-                            "children": []
-                          },
-                          {
-                            "id": "17fcfea6-37b5-4745-8299-014cc855b4df",
-                            "activated": true,
-                            "type": "subscribeMessage",
-                            "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTSubscribeMessageNode.qml"
-                            },
-                            "properties": {
-                              "mode": "subscribe",
-                              "channel": {
-                                "value": "redditMgr",
-                                "type": "string"
-                              }
-                            },
-                            "children": []
-                          },
-                          {
-                            "id": "5097a223-fe7f-42ab-94ce-eae49e471931",
-                            "activated": true,
-                            "type": "parallel",
-                            "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTParallelNode.qml"
-                            },
-                            "properties": {
-                              "statusCondition": "succeedsIfAnySucceeds",
-                              "retryPolicy": "propagateToAll"
+                              "active": "false"
                             },
                             "children": [
                               {
-                                "id": "67b15031-2aef-4e93-b63f-64fee8a520ca",
                                 "activated": true,
-                                "type": "sendMessage",
                                 "metadata": {
                                   "label": "send results to the \"cityMgr\" entity",
                                   "itemTemplate": "BTSendMessageNode.qml"
                                 },
                                 "properties": {
+                                  "channel": {
+                                    "type": "string",
+                                    "value": "cityMgr"
+                                  },
                                   "inputParams": [
                                     {
                                       "key": "content",
-                                      "value": "front",
-                                      "type": "entityKnowledge"
+                                      "type": "entityKnowledge",
+                                      "value": "front"
                                     }
-                                  ],
-                                  "channel": {
-                                    "value": "cityMgr",
-                                    "type": "string"
-                                  }
+                                  ]
                                 },
-                                "children": []
+                                "children": [],
+                                "id": "67b15031-2aef-4e93-b63f-64fee8a520ca",
+                                "type": "sendMessage"
                               },
                               {
-                                "id": "b1c0c47d-f8eb-467e-89e2-a568283ad057",
                                 "activated": true,
-                                "type": "condition",
                                 "metadata": {
-                                  "label": "",
-                                  "itemTemplate": "BTConditionNode.qml"
+                                  "label": ""
                                 },
-                                "properties": {
-                                  "op1": {
-                                    "value": "true",
-                                    "type": "boolean"
-                                  },
-                                  "op2": {
-                                    "value": "true",
-                                    "type": "boolean"
-                                  },
-                                  "op": "=="
-                                },
-                                "children": []
+                                "properties": {},
+                                "children": [
+                                  {
+                                    "activated": true,
+                                    "metadata": {
+                                      "label": ""
+                                    },
+                                    "properties": {
+                                      "destination": "reason",
+                                      "op": {
+                                        "type": "string",
+                                        "value": "sending message failed"
+                                      }
+                                    },
+                                    "children": [],
+                                    "id": "e0ecbad9-602d-4df3-8395-383e6b06bc71",
+                                    "type": "set"
+                                  }
+                                ],
+                                "id": "4a4e1317-7cff-4840-ab12-f26d77629307",
+                                "type": "failure"
                               }
-                            ]
+                            ],
+                            "id": "815d7fd9-43c4-4d9c-904a-034651f60fc8",
+                            "type": "priority"
                           },
                           {
-                            "id": "fb4cdd76-cd63-497a-9b74-142f58a8ef4d",
                             "activated": true,
-                            "type": "action",
                             "metadata": {
                               "label": "display post (non self.post)",
                               "itemTemplate": "BTActionNode.qml"
@@ -315,188 +195,83 @@
                               "inputParams": [
                                 {
                                   "key": "front",
-                                  "value": "front",
-                                  "type": "entityKnowledge"
+                                  "type": "entityKnowledge",
+                                  "value": "front"
                                 }
                               ],
                               "outputParams": []
                             },
-                            "children": []
-                          },
-                          {
-                            "id": "f9a92931-9702-4b38-94fb-2e163dc573f6",
-                            "activated": true,
-                            "type": "set",
-                            "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTSetNode.qml"
-                            },
-                            "properties": {
-                              "destination": "front",
-                              "op": {
-                                "value": "0",
-                                "type": "integer"
-                              }
-                            },
-                            "children": []
+                            "children": [],
+                            "id": "fb4cdd76-cd63-497a-9b74-142f58a8ef4d",
+                            "type": "action"
                           }
-                        ]
-                      },
-                      {
-                        "id": "f3eeb0e8-f7fe-4463-ab51-f49042e1c17d",
-                        "activated": true,
-                        "type": "sequence",
-                        "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTSequenceNode.qml"
-                        },
-                        "properties": {},
-                        "children": [
-                          {
-                            "id": "790bbea3-4802-49e2-8f3a-c01b5e6c77af",
-                            "activated": true,
-                            "type": "subscribeMessage",
-                            "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTSubscribeMessageNode.qml"
-                            },
-                            "properties": {
-                              "mode": "unsubscribe",
-                              "channel": {
-                                "value": "redditMgr",
-                                "type": "string"
-                              }
-                            },
-                            "children": []
-                          },
-                          {
-                            "id": "0f5ef06f-6299-437f-bd9d-b2ffc692b2c1",
-                            "activated": true,
-                            "type": "action",
-                            "metadata": {
-                              "label": "If no more posts, we end here",
-                              "itemTemplate": "BTActionNode.qml"
-                            },
-                            "properties": {
-                              "name": "EndOfSub",
-                              "inputParams": [
-                                {
-                                  "key": "message",
-                                  "value": "reason",
-                                  "type": "entityKnowledge"
-                                }
-                              ],
-                              "outputParams": []
-                            },
-                            "children": []
-                          }
-                        ]
+                        ],
+                        "id": "dee3b6e4-0189-45c3-af9c-7efbe32eb214",
+                        "type": "parallel"
                       }
-                    ]
+                    ],
+                    "id": "aacd11a5-a354-4551-9e7c-5b1bd2144d6c",
+                    "type": "sequence"
                   },
                   {
-                    "id": "c2638ed0-dc32-47ef-83f5-827217544869",
                     "activated": true,
-                    "type": "priority",
                     "metadata": {
-                      "label": "",
-                      "itemTemplate": "BTSelectorPrio.qml"
+                      "label": ""
                     },
-                    "properties": {
-                      "active": "true"
-                    },
+                    "properties": {},
                     "children": [
                       {
-                        "id": "5fd40827-2573-4a3c-b4ca-c739c1915a42",
                         "activated": true,
-                        "type": "receiveMessage",
                         "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTReceiveMessageNode.qml"
+                          "label": "If no more posts, we end here",
+                          "itemTemplate": "BTActionNode.qml"
                         },
                         "properties": {
-                          "sender": "",
-                          "content": "",
-                          "channel": {
-                            "value": "redditMgr",
-                            "type": "string"
-                          }
+                          "name": "EndOfSub",
+                          "inputParams": [
+                            {
+                              "key": "message",
+                              "type": "entityKnowledge",
+                              "value": "reason"
+                            }
+                          ],
+                          "outputParams": []
                         },
-                        "children": []
+                        "children": [],
+                        "id": "0f5ef06f-6299-437f-bd9d-b2ffc692b2c1",
+                        "type": "action"
                       },
                       {
-                        "id": "18e95ae8-88e7-4041-a447-6b6d36e2e08e",
                         "activated": true,
-                        "type": "sequence",
                         "metadata": {
-                          "label": "",
-                          "itemTemplate": "BTSequenceNode.qml"
-                        },
-                        "properties": {},
-                        "children": [
-                          {
-                            "id": "ea1693d3-a127-4292-b222-fbd686b48ec3",
-                            "activated": true,
-                            "type": "condition",
-                            "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTConditionNode.qml"
-                            },
-                            "properties": {
-                              "op1": {
-                                "value": "showNext",
-                                "type": "entityKnowledge"
-                              },
-                              "op2": {
-                                "value": "true",
-                                "type": "boolean"
-                              },
-                              "op": "=="
-                            },
-                            "children": []
-                          },
-                          {
-                            "id": "74e7697c-930a-40a7-a9a6-6ee1e83e4a38",
-                            "activated": true,
-                            "type": "set",
-                            "metadata": {
-                              "label": "",
-                              "itemTemplate": "BTSetNode.qml"
-                            },
-                            "properties": {
-                              "destination": "showNext",
-                              "op": {
-                                "value": "false",
-                                "type": "boolean"
-                              }
-                            },
-                            "children": []
-                          }
-                        ]
-                      },
-                      {
-                        "id": "b83eae05-4956-439a-ac14-d7b73861f9e1",
-                        "activated": true,
-                        "type": "action",
-                        "metadata": {
-                          "label": "waiting for updates",
-                          "itemTemplate": "BTActionNode.qml"
+                          "label": ""
                         },
                         "properties": {
                           "name": "Stall",
                           "inputParams": [],
                           "outputParams": []
                         },
-                        "children": []
+                        "children": [],
+                        "id": "eb6fa11f-bd94-42e5-a351-7c08167fefb2",
+                        "type": "action"
                       }
-                    ]
+                    ],
+                    "id": "7324aed4-5e60-4ece-ad26-ab3fd97e30f5",
+                    "type": "sequence"
                   }
-                ]
+                ],
+                "id": "c21c622b-2d76-4021-95a8-49734cae1ce2",
+                "type": "priority"
               }
-            ]
+            ],
+            "id": "ddc02ccb-cae7-4964-8640-052daa893d3a",
+            "type": "until"
           }
-        ]
+        ],
+        "id": "b6255149-6352-44b5-a26f-4751711ffcac",
+        "type": "sequence"
       }
-    ]
+    ],
+    "id": "a08cf5d5-46d6-4201-96a7-1522383ac63a"
   }
 ]
