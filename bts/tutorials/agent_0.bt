@@ -48,6 +48,26 @@
               "label": ""
             },
             "properties": {
+              "op1": {
+                "type": "entityKnowledge",
+                "value": "answer"
+              },
+              "op2": {
+                "type": "string",
+                "value": ""
+              },
+              "op": "!="
+            },
+            "children": [],
+            "id": "364e37fd-ede8-4b8a-952e-328fe9df5054",
+            "type": "condition"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
               "name": "Say",
               "inputParams": [
                 {
