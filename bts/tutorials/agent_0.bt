@@ -429,8 +429,25 @@
         },
         "properties": {
           "name": "GetDayEvents",
-          "inputParams": [],
-          "outputParams": []
+          "inputParams": [
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "qggqg"
+            },
+            {
+              "key": "date",
+              "type": "integer",
+              "value": "1"
+            }
+          ],
+          "outputParams": [
+            {
+              "key": "destination",
+              "type": "entityKnowledge",
+              "value": "qsf"
+            }
+          ]
         },
         "children": [],
         "id": "cb3c5093-f897-452c-96cc-f47cf3084b9b",
