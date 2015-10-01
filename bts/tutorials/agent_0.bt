@@ -16,7 +16,33 @@
         },
         "properties": {
           "name": "SendMail",
-          "inputParams": [],
+          "inputParams": [
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "qfqs"
+            },
+            {
+              "key": "recipient",
+              "type": "string",
+              "value": "qsf"
+            },
+            {
+              "key": "sender",
+              "type": "string",
+              "value": "qsf"
+            },
+            {
+              "key": "subject",
+              "type": "string",
+              "value": "ggg"
+            },
+            {
+              "key": "message",
+              "type": "string",
+              "value": "agfa"
+            }
+          ],
           "outputParams": []
         },
         "children": [],
@@ -30,7 +56,13 @@
         },
         "properties": {
           "name": "UpdateEvent",
-          "inputParams": [],
+          "inputParams": [
+            {
+              "key": "allDay",
+              "type": "boolean",
+              "value": "true"
+            }
+          ],
           "outputParams": []
         },
         "children": [],
