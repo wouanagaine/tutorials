@@ -308,7 +308,53 @@
         },
         "properties": {
           "name": "AddEvent",
-          "inputParams": [],
+          "inputParams": [
+            {
+              "key": "calendarId",
+              "type": "string",
+              "value": "sd"
+            },
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "sdd"
+            },
+            {
+              "key": "summary",
+              "type": "string",
+              "value": "ssd"
+            },
+            {
+              "key": "timeZone",
+              "type": "string",
+              "value": "sdgsd"
+            },
+            {
+              "key": "dateTime",
+              "type": "integer",
+              "value": "2"
+            },
+            {
+              "key": "allDay",
+              "type": "boolean",
+              "value": "true"
+            },
+            {
+              "key": "duration",
+              "type": "integer",
+              "value": "32"
+            },
+            {
+              "key": "location",
+              "type": "string",
+              "value": "sdg"
+            },
+            {
+              "key": "description",
+              "type": "string",
+              "value": "gds"
+            }
+          ],
           "outputParams": []
         },
         "children": [],
