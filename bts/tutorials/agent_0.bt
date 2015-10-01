@@ -14,6 +14,59 @@
         "metadata": {
           "label": ""
         },
+        "properties": {
+          "name": "SendMail",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "66706241-b4f5-4db7-8d07-e363b7a074bd",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "UpdateEvent",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "26edbb85-b194-4d04-af52-62692d04ab44",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "RetrieveCalendars",
+          "inputParams": [
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "zaf"
+            },
+            {
+              "key": "name",
+              "type": "string",
+              "value": "sdf"
+            }
+          ],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "98a13f0d-d043-4f8c-a21a-b2325d6963ae",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
         "properties": {},
         "children": [
           {
@@ -170,6 +223,118 @@
         ],
         "id": "fdf571ed-26fd-4349-86c9-6a3fe909d4f0",
         "type": "sequence"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "AddEvent",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "39f0917e-a895-43df-8494-d482e42d4dcf",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "CreateCalendar",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "f4732c12-c170-4016-832b-2c5eb2bf34e1",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "DeleteCalendar",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "9230429f-28f8-492c-b3d3-8b4ba74da371",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "GetDayEvents",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "cb3c5093-f897-452c-96cc-f47cf3084b9b",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "GetDirections",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "f91df619-fa60-419c-823d-c0051521584d",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "GetNextEvent",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "7abbfca1-1777-4c0e-b31a-e6d72aba211d",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "GetNextEvent",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "14b361dc-03e8-4236-8065-e6ecb825d76c",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "RemoveEvent",
+          "inputParams": [],
+          "outputParams": []
+        },
+        "children": [],
+        "id": "3e738f0b-482c-41c1-8a61-d08582d148ed",
+        "type": "action"
       }
     ],
     "id": "6e6991a6-5173-48fc-860f-de0481af8463"
