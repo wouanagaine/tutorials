@@ -355,7 +355,13 @@
               "value": "gds"
             }
           ],
-          "outputParams": []
+          "outputParams": [
+            {
+              "key": "destination",
+              "type": "entityKnowledge",
+              "value": "qsgg"
+            }
+          ]
         },
         "children": [],
         "id": "39f0917e-a895-43df-8494-d482e42d4dcf",
@@ -368,7 +374,23 @@
         },
         "properties": {
           "name": "CreateCalendar",
-          "inputParams": [],
+          "inputParams": [
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "qsgqs"
+            },
+            {
+              "key": "name",
+              "type": "string",
+              "value": "sdgsd"
+            },
+            {
+              "key": "description",
+              "type": "string",
+              "value": "sgd"
+            }
+          ],
           "outputParams": []
         },
         "children": [],
@@ -382,7 +404,18 @@
         },
         "properties": {
           "name": "DeleteCalendar",
-          "inputParams": [],
+          "inputParams": [
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "sdgd"
+            },
+            {
+              "key": "calendarId",
+              "type": "string",
+              "value": "sdgsdgs"
+            }
+          ],
           "outputParams": []
         },
         "children": [],
