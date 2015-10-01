@@ -88,32 +88,6 @@
               "label": ""
             },
             "properties": {
-              "name": "GetCityWeather",
-              "inputParams": [
-                {
-                  "key": "cityName",
-                  "type": "entityKnowledge",
-                  "value": "answer"
-                }
-              ],
-              "outputParams": [
-                {
-                  "key": "weather",
-                  "type": "entityKnowledge",
-                  "value": "weather"
-                }
-              ]
-            },
-            "children": [],
-            "id": "bd9baf14-e1b1-4943-bd30-ee192657cad4",
-            "type": "action"
-          },
-          {
-            "activated": true,
-            "metadata": {
-              "label": ""
-            },
-            "properties": {
               "statusCondition": "failsIfAnyFails",
               "retryPolicy": "propagateToRunning"
             },
@@ -166,6 +140,32 @@
             ],
             "id": "9b14d1cb-28e3-4ce3-b7b9-fa34a97fa15c",
             "type": "parallel"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "name": "GetCityWeather",
+              "inputParams": [
+                {
+                  "key": "cityName",
+                  "type": "entityKnowledge",
+                  "value": "answer"
+                }
+              ],
+              "outputParams": [
+                {
+                  "key": "weather",
+                  "type": "entityKnowledge",
+                  "value": "weather"
+                }
+              ]
+            },
+            "children": [],
+            "id": "bd9baf14-e1b1-4943-bd30-ee192657cad4",
+            "type": "action"
           }
         ],
         "id": "fdf571ed-26fd-4349-86c9-6a3fe909d4f0",
