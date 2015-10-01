@@ -61,6 +61,46 @@
               "key": "allDay",
               "type": "boolean",
               "value": "true"
+            },
+            {
+              "key": "userId",
+              "type": "string",
+              "value": "g"
+            },
+            {
+              "key": "calendarId",
+              "type": "string",
+              "value": "sdgs"
+            },
+            {
+              "key": "eventId",
+              "type": "string",
+              "value": "sg"
+            },
+            {
+              "key": "summary",
+              "type": "string",
+              "value": "sgds"
+            },
+            {
+              "key": "timeZone",
+              "type": "string",
+              "value": "sgd"
+            },
+            {
+              "key": "duration",
+              "type": "integer",
+              "value": "1"
+            },
+            {
+              "key": "location",
+              "type": "string",
+              "value": "sdg"
+            },
+            {
+              "key": "description",
+              "type": "string",
+              "value": "sdg"
             }
           ],
           "outputParams": []
